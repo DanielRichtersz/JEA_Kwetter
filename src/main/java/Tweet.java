@@ -1,4 +1,5 @@
 import java.util.Date;
+import java.util.List;
 
 public class Tweet {
 
@@ -7,6 +8,7 @@ public class Tweet {
     private TweetType type;
     private User owner;
     private String message;
+    private List<Like> likes;
 
     public Tweet() {
 
@@ -42,5 +44,13 @@ public class Tweet {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public void addLike(Like like) {
+        this.likes.add(like);
+    }
+
+    public List<Like> getLikes() {
+        return this.likes;
     }
 }

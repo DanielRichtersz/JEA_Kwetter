@@ -3,6 +3,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class EmailTest {
+
     private Email email;
 
     @Before

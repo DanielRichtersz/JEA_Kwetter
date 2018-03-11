@@ -2,92 +2,102 @@ import java.util.*;
 
 public class User {
 
-	private Email email;
-	private Phonenumber phonenumber;
-	private String password;
-	private String firstName;
-	private String lastName;
-	private String username;
-	private Collection<String> interests;
-	private String profilePictureURL;
-	private Collection<User> followers;
-	private Collection<User> following;
+    private Email email;
 
-	public User() {
 
-	}
+    private Phonenumber phonenumber;
+    private String password;
+    private String firstName;
+    private String lastName;
+    private String username;
+    private Collection<String> interests;
+    private String profilePictureURL;
+    private Collection<User> followers;
+    private Collection<User> following;
 
-	//region Getters & Setters
-	public Email getEmail() {
-		return email;
-	}
+    public User() {
 
-	public void setEmail(Email email) {
-		this.email = email;
-	}
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    //region Getters & Setters
+    public Email getEmail() {
+        return email;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setEmail(Email email) {
+        this.email = email;
+    }
 
-	public String getFirstName() {
-		return firstName;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public String getLastName() {
-		return lastName;
-	}
+    public String getFirstName() {
+        return firstName;
+    }
 
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
-	public String getUsername() {
-		return username;
-	}
+    public String getLastName() {
+        return lastName;
+    }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
-	public Collection<String> getInterests() {
-		return interests;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public void setInterests(Collection<String> interests) {
-		this.interests = interests;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public String getProfilePictureURL() {
-		return profilePictureURL;
-	}
+    public Collection<String> getInterests() {
+        return interests;
+    }
 
-	public void setProfilePictureURL(String profilePictureURL) {
-		this.profilePictureURL = profilePictureURL;
-	}
+    public void setInterests(Collection<String> interests) {
+        this.interests = interests;
+    }
 
-	public Collection<User> getFollowers() {
-		return followers;
-	}
+    public String getProfilePictureURL() {
+        return profilePictureURL;
+    }
 
-	public void setFollowers(Collection<User> followers) {
-		this.followers = followers;
-	}
+    public void setProfilePictureURL(String profilePictureURL) {
+        this.profilePictureURL = profilePictureURL;
+    }
 
-	public Collection<User> getFollowing() {
-		return following;
-	}
+    public Collection<User> getFollowers() {
+        return followers;
+    }
 
-	public void setFollowing(Collection<User> following) {
-		this.following = following;
-	}
-	//endregion
+    public void setFollowers(Collection<User> followers) {
+        this.followers = followers;
+    }
+
+    public Collection<User> getFollowing() {
+        return following;
+    }
+
+    public void setFollowing(Collection<User> following) {
+        this.following = following;
+    }
+
+    public Phonenumber getPhonenumber() {
+        return phonenumber;
+    }
+
+    public void setPhonenumber(Phonenumber phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+    //endregion
 }

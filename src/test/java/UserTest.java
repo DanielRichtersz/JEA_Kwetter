@@ -1,11 +1,82 @@
+import javafx.scene.control.DatePicker;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 public class UserTest {
+
+    User user;
+    User follower;
+    User following;
+    Email email;
+    Phonenumber phonenumber;
+    Tweet tweet;
+    Tweet tweet2;
 
     @Before
     public void InitializeTestData() {
+        email = new Email();
+        email.setEmail("test@mail.com");
+        email.setConfirmed(false);
 
+        phonenumber = new Phonenumber();
+        phonenumber.setCountry(Country.EUROPE);
+        phonenumber.setNumber("0621374675");
+        phonenumber.setPrefix("+31");
+
+        List<String> interests = new ArrayList<>();
+        interests.add("Food");
+        interests.add("Something interesting");
+
+        follower = new User();
+        follower.setEmail(email);
+        follower.setPhonenumber(phonenumber);
+        follower.setFirstName("Follow");
+        follower.setLastName("Er");
+        follower.setPassword("Password1");
+        follower.setProfilePictureURL("./url/another/folder/picture2.jpeg");
+        follower.setInterests(interests);
+
+        following = new User();
+        following.setEmail(email);
+        following.setPhonenumber(phonenumber);
+        following.setFirstName("Follow");
+        following.setLastName("Ing");
+        following.setPassword("Password2");
+        following.setProfilePictureURL("./url/another/folder/picture3.jpeg");
+        following.setInterests(interests);
+
+        List<User> followers = new ArrayList<>();
+        followers.add(follower);
+
+        List<User> followings = new ArrayList<>();
+        followings.add(following);
+
+        user = new User();
+        user.setEmail(email);
+        user.setPhonenumber(phonenumber);
+        user.setFirstName("Dan");
+        user.setLastName("Iel");
+        user.setPassword("Password");
+        user.setProfilePictureURL("./url/another/folder/picture.jpeg");
+        user.setInterests(interests);
+        user.setFollowers(followers);
+        user.setFollowing(followings);
+
+        tweet = new Tweet();
+        tweet.setMessage("First tweet");
+        tweet.setOwner(user);
+        tweet.setPostDate(new Date());
+        tweet.setType(TweetType.InititalTweet);
+
+        tweet2 = new Tweet();
+        tweet.setMessage('"' + tweet.getMessage() + '"' + " - Such nice tweet");
+        tweet.setOwner(following);
+        tweet.setPostDate(new Date());
+        tweet.setType(TweetType.ReTweet);
     }
 
     //region GetterTests

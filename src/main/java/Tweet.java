@@ -2,31 +2,45 @@ import java.util.Date;
 
 public class Tweet {
 
-	private Date postDate;
-	private TweetType type;
-	private User owner;
-	private String message;
+    private Date postDate;
 
-	public Tweet(Date postDate, TweetType type, User owner, String message) {
-		this.postDate = postDate;
-		this.type = type;
-		this.owner = owner;
-		this.message = message;
-	}
+    private TweetType type;
+    private User owner;
+    private String message;
 
-	public Date getPostDate() {
-		return postDate;
-	}
+    public Tweet() {
 
-	public TweetType getType() {
-		return type;
-	}
+    }
 
-	public User getOwner() {
-		return owner;
-	}
+    public Date getPostDate() {
+        return postDate;
+    }
 
-	public String getMessage() {
-	    return message;
-	}
+    public TweetType getType() {
+        return type;
+    }
+
+    public User getOwner() {
+        return owner;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setPostDate(Date postDate) {
+        this.postDate = postDate;
+    }
+
+    public void setType(TweetType type) {
+        this.type = type;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

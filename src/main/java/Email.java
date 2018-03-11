@@ -6,9 +6,8 @@ public class Email {
     private String email;
     private boolean isConfirmed;
 
-    public Email(String Email, boolean IsConfirmed) {
-        this.email = Email;
-        this.isConfirmed = IsConfirmed;
+    public Email() {
+
     }
 
     public String getEmail() {

@@ -4,10 +4,8 @@ public class Phonenumber {
 	private String number;
 	private String prefix;
 
-	public Phonenumber(Country country, String number, String prefix) {
-		this.country = country;
-		this.number = number;
-		this.prefix = prefix;
+	public Phonenumber() {
+
 	}
 
 	public Country getCountry() {

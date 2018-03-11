@@ -3,6 +3,7 @@ import java.util.*;
 public class User {
 
 	private Email email;
+	private Phonenumber phonenumber;
 	private String password;
 	private String firstName;
 	private String lastName;
@@ -12,12 +13,8 @@ public class User {
 	private Collection<User> followers;
 	private Collection<User> following;
 
-	public User(Email email, String password, String firstName, String lastName, String username) {
-		this.email = email;
-		this.password = password;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.username = username;
+	public User() {
+
 	}
 
 	//region Getters & Setters

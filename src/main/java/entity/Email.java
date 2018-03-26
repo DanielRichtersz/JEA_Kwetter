@@ -1,3 +1,5 @@
+package entity;
+
 import com.neovisionaries.i18n.CountryCode;
 
 public class Email {

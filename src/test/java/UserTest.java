@@ -1,4 +1,4 @@
-import javafx.scene.control.DatePicker;
+import entity.*;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ public class UserTest {
     User follower;
     User following;
     Email email;
-    Phonenumber phonenumber;
+    String phonenumber;
     Tweet tweet;
     Tweet tweet2;
 
@@ -22,10 +22,7 @@ public class UserTest {
         email.setEmail("test@mail.com");
         email.setConfirmed(false);
 
-        phonenumber = new Phonenumber();
-        phonenumber.setCountry(Country.EUROPE);
-        phonenumber.setNumber("0621374675");
-        phonenumber.setPrefix("+31");
+        phonenumber = "0621374675";
 
         List<String> interests = new ArrayList<>();
         interests.add("Food");

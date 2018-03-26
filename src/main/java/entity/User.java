@@ -1,3 +1,5 @@
+package entity;
+
 import java.util.*;
 
 public class User {
@@ -5,7 +7,7 @@ public class User {
     private Email email;
 
 
-    private Phonenumber phonenumber;
+    private String phonenumber;
     private String password;
     private String firstName;
     private String lastName;
@@ -92,11 +94,11 @@ public class User {
         this.following = following;
     }
 
-    public Phonenumber getPhonenumber() {
+    public String getPhonenumber() {
         return phonenumber;
     }
 
-    public void setPhonenumber(Phonenumber phonenumber) {
+    public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
     }
     //endregion

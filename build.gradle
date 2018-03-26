@@ -2,6 +2,7 @@ group 'Kwetter'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'war'
 
 sourceCompatibility = 1.8
 
@@ -13,4 +14,23 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     //List of countries
     compile 'com.neovisionaries:nv-i18n:1.22'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ["src/main/java"]
+        }
+        resources {
+            srcDirs = ["src/main/resources"]
+        }
+    }
+    test {
+        java {
+            srcDirs = ["src/test/java"]
+        }
+        resources {
+            srcDirs = ["src/test/resources"]
+        }
+    }
 }

@@ -1,6 +1,9 @@
 package entity;
 
-public class Like {
+import java.io.Serializable;
+
+public class Like implements Serializable {
+
     private User owner;
 
     public Like() {

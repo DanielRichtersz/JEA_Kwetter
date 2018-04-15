@@ -18,6 +18,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Gradle: org.glassfish:javax.ejb:3.1.1" level="project" />
     <orderEntry type="library" name="Gradle: com.neovisionaries:nv-i18n:1.22" level="project" />
+    <orderEntry type="library" name="Gradle: org.glassfish:javax.transaction:3.1.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.glassfish:javax.annotation:3.1.1" level="project" />
   </component>
 </module>

@@ -1,11 +1,12 @@
 package entity;
 
-import com.neovisionaries.i18n.CountryCode;
+import java.io.Serializable;
 
-public class Email {
+public class Email implements Serializable {
 
 
     private String email;
+
     private boolean isConfirmed;
 
     public Email() {

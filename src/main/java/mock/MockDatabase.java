@@ -5,11 +5,13 @@ import entity.Tweet;
 import entity.TweetType;
 import entity.User;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class MockDatabase {
+public class MockDatabase implements Serializable {
+
 
     List<Tweet> tweetList = new ArrayList<>();
     List<User> userList = new ArrayList<>();

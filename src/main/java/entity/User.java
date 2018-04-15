@@ -1,12 +1,13 @@
 package entity;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class User {
+public class User implements Serializable {
 
     private Email email;
 
-
+    private Long id;
     private String phonenumber;
     private String password;
     private String firstName;
@@ -100,6 +101,14 @@ public class User {
 
     public void setPhonenumber(String phonenumber) {
         this.phonenumber = phonenumber;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
     //endregion
 }

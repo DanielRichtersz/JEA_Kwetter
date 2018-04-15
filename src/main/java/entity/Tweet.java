@@ -6,7 +6,6 @@ import java.util.List;
 public class Tweet {
 
     private Date postDate;
-
     private TweetType type;
     private User owner;
     private String message;

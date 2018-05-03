@@ -17,10 +17,19 @@
           <element id="dir-copy" path="$PROJECT_DIR$/out/production/resources" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Gradle: javax:javaee-api:8.0" />
+          <element id="library" level="project" name="Gradle: javax.persistence:javax.persistence-api:2.2" />
           <element id="library" level="project" name="Gradle: org.glassfish:javax.ejb:3.1.1" />
           <element id="library" level="project" name="Gradle: com.neovisionaries:nv-i18n:1.22" />
+          <element id="library" level="project" name="Gradle: com.sun.mail:javax.mail:1.6.0" />
           <element id="library" level="project" name="Gradle: org.glassfish:javax.transaction:3.1.1" />
           <element id="library" level="project" name="Gradle: org.glassfish:javax.annotation:3.1.1" />
+          <element id="library" level="project" name="Gradle: javax.activation:activation:1.1" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/eclipselink/2.7.1/53a763027fff7e608187e5ad3711d6e14be79df2/eclipselink-2.7.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/javax.persistence/2.2.0/1c151c4dab60a89b5acc34f61132fc669f0b9e2e/javax.persistence-2.2.0.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.eclipse.persistence/commonj.sdo/2.1.1/90d4c89ce0a69f58619f1a247bbf420122139ff5/commonj.sdo-2.1.1.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.validation/validation-api/1.1.0.Final/8613ae82954779d518631e05daa73a6a954817d5/validation-api-1.1.0.Final.jar" />
+          <element id="file-copy" path="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish/javax.json/1.0.4/3178f73569fd7a1e5ffc464e680f7a8cc784b85a/javax.json-1.0.4.jar" />
         </element>
       </element>
     </root>

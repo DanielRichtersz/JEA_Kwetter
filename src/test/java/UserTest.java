@@ -66,13 +66,13 @@ public class UserTest {
         tweet = new Tweet();
         tweet.setMessage("First tweet");
         tweet.setOwner(user);
-        tweet.setPostDate(new Date());
+        tweet.setDateCreated(new Date());
         tweet.setType(TweetType.InititalTweet);
 
         tweet2 = new Tweet();
         tweet.setMessage('"' + tweet.getMessage() + '"' + " - Such nice tweet");
         tweet.setOwner(following);
-        tweet.setPostDate(new Date());
+        tweet.setDateCreated(new Date());
         tweet.setType(TweetType.ReTweet);
     }
 

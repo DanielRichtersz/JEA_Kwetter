@@ -1,22 +1,60 @@
 package entity;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.*;
 
+@Entity(name = "USER")
 public class User implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private Long id;
+
+    @OneToOne
+    @JoinColumn(name="EMAIL_ID")
     private Email email;
 
-    private Long id;
+    @Column(name="PHONENUMBER")
     private String phonenumber;
+
+    //TODO CONFIRM VALIDITY?
+    @Column(name="PASSWORD")
     private String password;
+
+    @Column(name="FIRST_NAME")
     private String firstName;
+
+    @Column(name="LAST_NAME")
     private String lastName;
+
+    @Column(name="USERNAME")
     private String username;
-    private Collection<String> interests;
+
+    @Column(name="PROFILE_PICTURE")
     private String profilePictureURL;
-    private Collection<User> followers;
-    private Collection<User> following;
+
+    //TODO CONFIRM VALIDITY ONETOMANY?
+    @ElementCollection
+    private List<String> interests;
+
+    @OneToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name="FOLLOWER_USER_ID")
+    private List<User> followers;
+
+    @OneToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name="FOLLOWING_USER_ID")
+    private List<User> following;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.PERSIST)
+    @JoinTable(name="LIKES")
+    private List<Like> likes;
+
+    //TODO CONFIRM VALIDITY?
+    @OneToMany(mappedBy = "owner", cascade = CascadeType.PERSIST)
+    @JoinTable(name="TWEETS")
+    private List<Tweet> tweets;
 
     public User() {
 
@@ -63,11 +101,11 @@ public class User implements Serializable {
         this.username = username;
     }
 
-    public Collection<String> getInterests() {
+    public List<String> getInterests() {
         return interests;
     }
 
-    public void setInterests(Collection<String> interests) {
+    public void setInterests(List<String> interests) {
         this.interests = interests;
     }
 
@@ -79,19 +117,19 @@ public class User implements Serializable {
         this.profilePictureURL = profilePictureURL;
     }
 
-    public Collection<User> getFollowers() {
+    public List<User> getFollowers() {
         return followers;
     }
 
-    public void setFollowers(Collection<User> followers) {
+    public void setFollowers(List<User> followers) {
         this.followers = followers;
     }
 
-    public Collection<User> getFollowing() {
+    public List<User> getFollowing() {
         return following;
     }
 
-    public void setFollowing(Collection<User> following) {
+    public void setFollowing(List<User> following) {
         this.following = following;
     }
 
@@ -109,6 +147,14 @@ public class User implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public List<Like> getLikes() {
+        return likes;
+    }
+
+    public void setLikes(List<Like> likes) {
+        this.likes = likes;
     }
     //endregion
 }

@@ -81,13 +81,13 @@ public class MockDatabase implements Serializable {
         tweet = new Tweet();
         tweet.setMessage("First tweet");
         tweet.setOwner(user);
-        tweet.setPostDate(new Date());
+        tweet.setDateCreated(new Date());
         tweet.setType(TweetType.InititalTweet);
 
         tweet2 = new Tweet();
         tweet2.setMessage('"' + tweet.getMessage() + '"' + " - Such nice tweet");
         tweet2.setOwner(following);
-        tweet2.setPostDate(new Date());
+        tweet2.setDateCreated(new Date());
         tweet2.setType(TweetType.ReTweet);
 
         userList.add(user);

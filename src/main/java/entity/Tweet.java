@@ -1,22 +1,39 @@
 package entity;
 
+import org.eclipse.persistence.jpa.config.Cascade;
+
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
+@Entity(name = "TWEET")
 public class Tweet {
 
-    private Date postDate;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
+    private Long id;
+
+    @Column(name="DATE_CREATED")
+    private Date dateCreated;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name="TWEET_TYPE")
     private TweetType type;
+
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name="USER_ID")
     private User owner;
+
+    @Column(name="MESSAGE")
     private String message;
-    private List<Like> likes;
 
     public Tweet() {
 
     }
 
-    public Date getPostDate() {
-        return postDate;
+    public Date getDateCreated() {
+        return dateCreated;
     }
 
     public TweetType getType() {
@@ -31,8 +48,8 @@ public class Tweet {
         return message;
     }
 
-    public void setPostDate(Date postDate) {
-        this.postDate = postDate;
+    public void setDateCreated(Date postDate) {
+        this.dateCreated = postDate;
     }
 
     public void setType(TweetType type) {
@@ -45,13 +62,5 @@ public class Tweet {
 
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    public void addLike(Like like) {
-        this.likes.add(like);
-    }
-
-    public List<Like> getLikes() {
-        return this.likes;
     }
 }

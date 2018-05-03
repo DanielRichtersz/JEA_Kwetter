@@ -8,7 +8,6 @@ public class App {
 
     public void init() {
         db = new MockDatabase();
-
     }
 
 }

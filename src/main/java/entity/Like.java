@@ -1,28 +1,37 @@
 package entity;
 
-import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 
-@Entity(name = "LIKE")
 public class Like implements Serializable {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
     private Long id;
 
-
-    //TODO CONFIRM VALIDITY?
-
-    @ManyToOne
-    @JoinColumn(name="USER_ID")
     private User user;
 
-    @ManyToOne
-    @JoinColumn(name="TWEET_ID")
     private Tweet tweet;
+
+    private Date dateLiked;
 
     public Like() {
 
+    }
+
+    public Like(User user, Tweet tweet, Date dateLiked) {
+        this.user = user;
+        this.tweet = tweet;
+        this.dateLiked = dateLiked;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

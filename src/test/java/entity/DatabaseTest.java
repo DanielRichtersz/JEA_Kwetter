@@ -1,16 +1,14 @@
-import entity.Email;
-import entity.User;
+package entity;
+
 import org.junit.Test;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DatabaseTest {
 
-    @PersistenceContext()
-    private EntityManager em;
+    //@PersistenceContext()
+    //private EntityManager em;
 
     @Test
     public void DatabaseTest() {
@@ -31,6 +29,6 @@ public class DatabaseTest {
         user.setProfilePictureURL("./url/another/folder/picture2.jpeg");
         user.setInterests(interests);
 
-        em.persist(user);
+        //em.persist(user);
     }
 }

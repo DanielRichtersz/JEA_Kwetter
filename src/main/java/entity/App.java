@@ -4,7 +4,7 @@ import mock.MockDatabase;
 
 public class App {
 
-    private MockDatabase db;
+    public static MockDatabase db;
 
     public void init() {
         db = new MockDatabase();

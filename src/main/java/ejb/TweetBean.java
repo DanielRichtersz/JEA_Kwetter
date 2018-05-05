@@ -5,6 +5,8 @@ import entity.Like;
 import entity.Tweet;
 import entity.User;
 
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -12,7 +14,12 @@ import java.util.Date;
 
 public class TweetBean {
 
-    public Response createTweet(String dateCreated, long userId, String message) {
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/tweet/create")
+    public Response createTweet(@FormParam("datecreated") String dateCreated,
+                                @FormParam("userid") long userId,
+                                @FormParam("message") String message) {
         Tweet tweet = new Tweet();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
         Date date;
@@ -52,7 +59,10 @@ public class TweetBean {
         return Response.ok(tweet).build();
     }
 
-    public Response removeTweet(long tweetId, long userId) {
+    //Should be in UserBean?
+    @DELETE
+    @Path("/tweet/delete/{userid}/{tweetid}")
+    public Response removeTweet(@PathParam("userid")long userId, @PathParam("tweetid")long tweetId) {
         for (Tweet tweet : App.db.getTweetList()) {
             if (tweet.getId() == tweetId && tweet.getOwner().getId() == userId) {
                 App.db.getTweetList().remove(tweet);
@@ -62,7 +72,9 @@ public class TweetBean {
         return Response.status(Response.Status.NOT_FOUND).build();
     }
 
-    public Response addLikeToTweet(long tweetId, long userId) {
+    @POST
+    @Path("/tweet/addlike/{tweetid}/{userid}")
+    public Response addLikeToTweet(@PathParam("tweetid") long tweetId, @PathParam("userid") long userId) {
         //Find the corresponding tweet and user
         //Create the like and add to the tweet
         //With JPA this will be done only with the ID's, however using a mockdatabase this is the fastest solution
@@ -85,7 +97,10 @@ public class TweetBean {
         return Response.status(Response.Status.NOT_FOUND).build();
     }
 
-    public Response removeLikeFromTweet(long tweetId, long userId) {
+    //Find method to have userid protected so a user can only delete its own tweets
+    @DELETE
+    @Path("/tweet/remove/{tweetid}/{userid}")
+    public Response removeLikeFromTweet(@PathParam("tweetid") long tweetId, @PathParam("userid") long userId) {
         for (Tweet tweet : App.db.getTweetList()) {
             if (tweet.getId() == tweetId) {
                 for (Like like : tweet.getLikes()) {

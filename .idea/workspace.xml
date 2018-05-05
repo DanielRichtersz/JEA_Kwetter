@@ -2,29 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef2d47a2-da0c-43b3-80cb-7d4156cf2098" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ejb/UserBean.java" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/fileSnapshots.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/TweetDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/dao/TweetDAOImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ejb/TweetBean.java" afterPath="$PROJECT_DIR$/src/main/java/ejb/TweetBean.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/App.java" afterPath="$PROJECT_DIR$/src/main/java/entity/App.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Email.java" afterPath="$PROJECT_DIR$/src/main/java/entity/Email.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Employee.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Like.java" afterPath="$PROJECT_DIR$/src/main/java/entity/Like.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/Tweet.java" afterPath="$PROJECT_DIR$/src/main/java/entity/Tweet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/entity/User.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/mock/MockDatabase.java" afterPath="$PROJECT_DIR$/src/main/java/mock/MockDatabase.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" afterPath="$PROJECT_DIR$/src/test/java/entity/DatabaseTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/EmailTest.java" afterPath="$PROJECT_DIR$/src/test/java/entity/EmailTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PhonenumberTest.java" afterPath="$PROJECT_DIR$/src/test/java/entity/PhonenumberTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TweetTest.java" afterPath="$PROJECT_DIR$/src/test/java/entity/TweetTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/UserTest.java" afterPath="$PROJECT_DIR$/src/test/java/entity/UserTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/entity/EmployeeTest.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ejb/UserBean.java" afterPath="$PROJECT_DIR$/src/main/java/ejb/UserBean.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -58,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="TweetBean.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TweetBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ejb/TweetBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="68" column="53" lean-forward="false" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+            <state relative-caret-position="903">
+              <caret line="52" column="40" lean-forward="false" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserBean.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserBean.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ejb/UserBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="1617">
+              <caret line="77" column="58" lean-forward="false" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -552,10 +531,10 @@
         <option value="$PROJECT_DIR$/src/main/java/entity/Email.java" />
         <option value="$PROJECT_DIR$/src/main/java/mock/MockDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ejb/UserBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Tweet.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Like.java" />
         <option value="$PROJECT_DIR$/src/main/java/ejb/TweetBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ejb/UserBean.java" />
       </list>
     </option>
   </component>
@@ -707,6 +686,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
+    <property name="extract.method.default.visibility" value="private" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -1030,7 +1010,7 @@
       <workItem from="1525255390856" duration="304000" />
       <workItem from="1525256932852" duration="791000" />
       <workItem from="1525263489695" duration="218000" />
-      <workItem from="1525339272174" duration="15622000" />
+      <workItem from="1525339272174" duration="19565000" />
     </task>
     <servers />
   </component>
@@ -1067,7 +1047,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88778000" />
+    <option name="totallyTimeSpent" value="92721000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1860" height="1098" extended-state="6" />
@@ -1399,16 +1379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ejb/UserBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="35" column="26" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/Tweet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
@@ -1444,8 +1414,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ejb/TweetBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="68" column="53" lean-forward="false" selection-start-line="68" selection-start-column="53" selection-end-line="68" selection-end-column="53" />
+        <state relative-caret-position="903">
+          <caret line="52" column="40" lean-forward="false" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ejb/UserBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1617">
+          <caret line="77" column="58" lean-forward="false" selection-start-line="77" selection-start-column="58" selection-end-line="77" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

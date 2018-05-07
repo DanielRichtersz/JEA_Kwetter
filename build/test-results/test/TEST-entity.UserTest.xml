@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="entity.UserTest" tests="18" skipped="0" failures="0" errors="0" timestamp="2018-05-06T11:22:18" hostname="LAPTOP-SVUM57RM" time="0.017">
+  <properties/>
+  <testcase name="GetEmailTest" classname="entity.UserTest" time="0.004"/>
+  <testcase name="SetFollowersTest" classname="entity.UserTest" time="0.0"/>
+  <testcase name="SetUsernameTest" classname="entity.UserTest" time="0.002"/>
+  <testcase name="SetInterestsTest" classname="entity.UserTest" time="0.0"/>
+  <testcase name="GetFollowingTest" classname="entity.UserTest" time="0.0"/>
+  <testcase name="SetProfilePictureURLTest" classname="entity.UserTest" time="0.0"/>
+  <testcase name="SetEmailTest" classname="entity.UserTest" time="0.0"/>
+  <testcase name="SetFirstNameTest" classname="entity.UserTest" time="0.0"/>
+  <testcase name="GetFollowersTest" classname="entity.UserTest" time="0.0"/>
+  <testcase name="GetProfilePictureURLTest" classname="entity.UserTest" time="0.0"/>
+  <testcase name="GetInterestsTest" classname="entity.UserTest" time="0.0"/>
+  <testcase name="GetLastNameTest" classname="entity.UserTest" time="0.0"/>
+  <testcase name="GetPasswordTest" classname="entity.UserTest" time="0.001"/>
+  <testcase name="GetUsernameTest" classname="entity.UserTest" time="0.0"/>
+  <testcase name="SetLastNameTest" classname="entity.UserTest" time="0.0"/>
+  <testcase name="SetFollowingTest" classname="entity.UserTest" time="0.002"/>
+  <testcase name="GetFirstNameTest" classname="entity.UserTest" time="0.001"/>
+  <testcase name="SetPasswordTest" classname="entity.UserTest" time="0.0"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

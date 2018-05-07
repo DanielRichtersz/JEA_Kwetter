@@ -1,4 +1,4 @@
-package entity;
+package com.github.danielrichtersz.entity;
 
 import org.junit.Assert;
 import org.junit.Before;

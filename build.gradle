@@ -19,8 +19,14 @@ dependencies {
     //EJB
     compile group: 'org.glassfish', name: 'javax.ejb', version: '3.1.1'
 
-    //List of countries
-    compile 'com.neovisionaries:nv-i18n:1.22'
+    //MIME Jersey
+    compile group: 'org.jvnet.mimepull', name: 'mimepull', version: '1.9.7'
+    compile group: 'org.glassfish.jersey.media', name: 'jersey-media-multipart', version: '2.26'
+    compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.26'
+    compile group: 'org.glassfish.jersey.core', name: 'jersey-common', version: '2.26'
+    compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet-core', version: '2.26'
+    compile group: 'commons-io', name: 'commons-io', version: '2.6'
+
 }
 
 sourceSets {

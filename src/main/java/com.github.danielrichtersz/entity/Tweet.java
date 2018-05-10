@@ -75,7 +75,7 @@ public class Tweet implements Serializable {
 
         //Todo: +2 hours timezone
         TimeZone timeZone = TimeZone.getTimeZone("Europe/Amsterdam");
-        Calendar calendar = Calendar.getInstance();
+        Calendar calendar = new GregorianCalendar();
         calendar.setTimeZone(timeZone);
         Date date = calendar.getTime();
 

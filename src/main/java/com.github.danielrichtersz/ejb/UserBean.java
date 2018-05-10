@@ -3,54 +3,57 @@ package com.github.danielrichtersz.ejb;
 import com.github.danielrichtersz.entity.Email;
 import com.github.danielrichtersz.entity.User;
 import com.github.danielrichtersz.mock.MockDatabase;
+import com.github.danielrichtersz.services.MockDatabaseService;
 
+import javax.ejb.CreateException;
 import javax.ejb.EJB;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.xml.bind.ValidationException;
 
 @Path("/users")
 public class UserBean {
 
     @EJB
-    MockingBean mockingBean;
+    MockDatabaseService mockDatabaseService;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/test")
     public Response testGetCheck() {
-        MockDatabase mdb = mockingBean.getDb();
+        MockDatabase mdb = mockDatabaseService.getDb();
         return Response.ok(mdb).build();
     }
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/login")
-    public Response logInCheck(@FormParam("email") String email, @FormParam("password") String password) {
-        for (User user : mockingBean.getDb().getUserList()) {
+    public User logInCheck(@FormParam("email") String email, @FormParam("password") String password) throws ValidationException {
+        for (User user : mockDatabaseService.getDb().getUserList()) {
             //Comparison doesn't work, something going wrong in string format? In debug all values are the same ('test@mail.com' and 'Password')
             if (email.equals(user.getEmail().getEmail()) && password.equals(user.getPassword())) {
-                return Response.ok(user).build();
+                return user;
             }
         }
-        return Response.status(Response.Status.NOT_FOUND).build();
+        throw new ValidationException("The login credentials could not be validated");
     }
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/user/create")
-    public Response createUser(@FormParam("firstname") String firstName,
+    public User createUser(@FormParam("firstname") String firstName,
                                @FormParam("lastname") String lastName,
                                @FormParam("email") String email,
                                @FormParam("password") String password,
                                @FormParam("phonenumber") String phonenumber,
-                               @FormParam("profilepictureurl") String profilePicture) {
+                               @FormParam("profilepictureurl") String profilePicture) throws CreateException {
         User user = createOrUpdateUser(firstName, lastName, email, password, phonenumber, profilePicture, null);
         if (user != null) {
-            mockingBean.getDb().getUserList().add(user);
-            return Response.ok(user).build();
+            mockDatabaseService.getDb().getUserList().add(user);
+            return user;
         } else {
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
+            throw new CreateException("User could not be created");
         }
 
     }
@@ -58,35 +61,38 @@ public class UserBean {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{userid}/get")
-    public Response getUser(@PathParam("userid") long userId) {
-        for (User user : mockingBean.getDb().getUserList()) {
+    public User getUser(@PathParam("userid") long userId) {
+        for (User user : mockDatabaseService.getDb().getUserList()) {
             if (user.getId() == userId) {
-                return Response.status(Response.Status.FOUND).entity(user).build();
+                return user;
             }
         }
-        return Response.status(Response.Status.NOT_FOUND).build();
+        throw new NotFoundException("The specified user could not be found");
     }
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{userid}/edit")
-    public Response editUser(@PathParam("userid") long userId,
+    public User editUser(@PathParam("userid") long userId,
                              @FormParam("firstname") String firstName,
                              @FormParam("lastname") String lastName,
                              @FormParam("email") String email,
                              @FormParam("password") String password,
                              @FormParam("phonenumber") String phonenumber,
-                             @FormParam("profilepictureurl") String profilePicture) {
-        for (User foundUser : mockingBean.getDb().getUserList()) {
+                             @FormParam("profilepictureurl") String profilePicture) throws CreateException {
+        for (User foundUser : mockDatabaseService.getDb().getUserList()) {
             if (foundUser.getId() == userId) {
                 foundUser = createOrUpdateUser(firstName, lastName, email, password, phonenumber, profilePicture, foundUser);
 
+                if (foundUser == null) {
+                    throw new CreateException("The specified user data could not be edited");
+                }
                 //User was updated
-                return Response.ok(foundUser).build();
+                return foundUser;
             }
         }
         //User was not found
-        return Response.status(Response.Status.NOT_FOUND).build();
+        throw new NotFoundException("The specified user could not be found");
     }
 
     //Creates or, if a user is given with editUser, updates a user with the given information.
@@ -104,14 +110,14 @@ public class UserBean {
             (lastName == null || lastName.isEmpty()) ||
             (email == null || email.isEmpty()) ||
             (password == null || password.isEmpty())) {
-                return null;
+                throw new NullPointerException("Could not create the user due to missing input");
             }
             //Check if used is to be edited
             if (editUser != null) {
                 user = editUser;
             } else {
                 user = new User();
-                user.setId((long)mockingBean.getDb().getUserList().size() + 1);
+                user.setId((long) mockDatabaseService.getDb().getUserList().size() + 1);
             }
 
             user.setFirstName(firstName);

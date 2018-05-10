@@ -1,4 +1,4 @@
-package com.github.danielrichtersz.ejb;
+package com.github.danielrichtersz.services;
 
 import com.github.danielrichtersz.mock.MockDatabase;
 
@@ -8,7 +8,7 @@ import javax.ejb.Startup;
 
 @Singleton
 @Startup
-public class MockingBean {
+public class MockDatabaseService {
 
     private MockDatabase db;
 

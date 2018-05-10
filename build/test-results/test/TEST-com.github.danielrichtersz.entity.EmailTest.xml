@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.github.danielrichtersz.entity.EmailTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-05-07T03:47:45" hostname="LAPTOP-SVUM57RM" time="0.002">
+<testsuite name="com.github.danielrichtersz.entity.EmailTest" tests="4" skipped="0" failures="0" errors="0" timestamp="2018-05-10T13:14:33" hostname="LAPTOP-SVUM57RM" time="0.001">
   <properties/>
-  <testcase name="GetEmailTest" classname="com.github.danielrichtersz.entity.EmailTest" time="0.001"/>
+  <testcase name="GetEmailTest" classname="com.github.danielrichtersz.entity.EmailTest" time="0.0"/>
   <testcase name="SetEmailTest" classname="com.github.danielrichtersz.entity.EmailTest" time="0.0"/>
   <testcase name="GetIsConfirmedTest" classname="com.github.danielrichtersz.entity.EmailTest" time="0.001"/>
   <testcase name="SetIsConfirmedTest" classname="com.github.danielrichtersz.entity.EmailTest" time="0.0"/>

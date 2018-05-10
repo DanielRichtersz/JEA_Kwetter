@@ -16,9 +16,6 @@ dependencies {
     compile "javax.persistence:javax.persistence-api:2.2"
     compile group: 'org.eclipse.persistence', name: 'eclipselink', version: '2.7.1'
 
-    //EJB
-    compile group: 'org.glassfish', name: 'javax.ejb', version: '3.1.1'
-
     //MIME Jersey
     compile group: 'org.jvnet.mimepull', name: 'mimepull', version: '1.9.7'
     compile group: 'org.glassfish.jersey.media', name: 'jersey-media-multipart', version: '2.26'

@@ -1,5 +1,6 @@
 package com.github.danielrichtersz.entity;
 
+import javax.xml.bind.annotation.XmlTransient;
 import java.io.Serializable;
 import java.util.List;
 
@@ -42,6 +43,7 @@ public class User implements Serializable {
         this.email = email;
     }
 
+    @XmlTransient
     public String getPassword() {
         return password;
     }

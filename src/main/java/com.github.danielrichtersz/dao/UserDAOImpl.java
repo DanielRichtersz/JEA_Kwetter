@@ -31,4 +31,9 @@ public class UserDAOImpl implements UserDAO {
     public void remove(User entity) {
         em.remove(entity);
     }
+
+    @Override
+    public User getByCredentials(String email, String password) {
+        return null;
+    }
 }

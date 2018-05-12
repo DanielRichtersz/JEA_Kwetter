@@ -3,6 +3,7 @@ package com.github.danielrichtersz.dao;
 import com.github.danielrichtersz.entity.Tweet;
 
 import javax.ejb.Stateless;
+import javax.management.InstanceAlreadyExistsException;
 import javax.persistence.EntityManager;
 
 @Stateless
@@ -24,5 +25,15 @@ public class TweetDAOImpl implements TweetDAO {
 
     public void remove(Tweet entity) {
         em.remove(entity);
+    }
+
+    @Override
+    public void addLikeToTweet(long tweetId, long userId) throws InstanceAlreadyExistsException {
+
+    }
+
+    @Override
+    public void removeLikeFromTweet(long tweetId, long userId) {
+
     }
 }

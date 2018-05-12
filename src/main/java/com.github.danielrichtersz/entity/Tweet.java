@@ -1,5 +1,6 @@
 package com.github.danielrichtersz.entity;
 
+import javax.ws.rs.NotFoundException;
 import java.io.Serializable;
 import java.util.*;
 
@@ -72,14 +73,7 @@ public class Tweet implements Serializable {
     //endregion
 
     public Like addLike(long userId) {
-
-        //Todo: +2 hours timezone
-        TimeZone timeZone = TimeZone.getTimeZone("Europe/Amsterdam");
-        Calendar calendar = new GregorianCalendar();
-        calendar.setTimeZone(timeZone);
-        Date date = calendar.getTime();
-
-        Like like = new Like(userId, this.getId(), date);
+        Like like = new Like(userId, this.getId());
         //Set the id of the like. This is a far from perfect (or programming wise, pretty) solution
         //however it fits the needs and will function as needed
         like.setId((long) this.getLikes().size() + 1);
@@ -87,7 +81,12 @@ public class Tweet implements Serializable {
         return like;
     }
 
-    public void addLike(Like like) {
-        this.likes.add(like);
+    public void removeLike(long userId) {
+        for (Like like : this.likes) {
+            if (like.getUserId() == userId) {
+                this.likes.remove(like);
+            }
+        }
+        throw new NotFoundException("This tweet has not been liked by the specified user");
     }
 }

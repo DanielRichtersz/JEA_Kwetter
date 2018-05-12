@@ -6,8 +6,8 @@ import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 
-@Singleton
 @Startup
+@Singleton(mappedName = "MockDatabaseServiceMN")
 public class MockDatabaseService {
 
     private MockDatabase db;
@@ -18,6 +18,7 @@ public class MockDatabaseService {
 
     @PostConstruct
     public void init() {
+        //By calling the static instance of the MockDatabase, the returned instance will always be the same
         db = MockDatabase.getInstance();
     }
 }

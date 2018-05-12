@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef2d47a2-da0c-43b3-80cb-7d4156cf2098" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAOLocal.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAOLocal.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/TweetBeanRemote.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/UserBeanRemote.java" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileContent/fileContent.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/fileHashes/fileHashes.lock" />
@@ -10,18 +14,42 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" afterPath="$PROJECT_DIR$/.gradle/4.0/taskHistory/taskHistory.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/artifacts/Gradle___Kwetter___1_1_0_SNAPSHOT_war__exploded_.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/Gradle___Kwetter___1_1_0_SNAPSHOT_war__exploded_.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_javax_annotation_3_1_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_javax_ejb_3_1_1.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_javax_transaction_3_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_annotations_2_8_4.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_core_2_8_4.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_core_jackson_databind_2_8_4.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_8_4.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__commons_io_commons_io_2_6.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_annotation_javax_annotation_api_1_2.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_persistence_javax_persistence_api_2_2.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_validation_validation_api_1_1_0_Final.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_ws_rs_javax_ws_rs_api_2_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_persistence_commonj_sdo_2_1_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_persistence_eclipselink_2_7_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_eclipse_persistence_javax_persistence_2_2_0.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_hk2_external_javax_inject_2_5_0_b42.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_hk2_osgi_resource_locator_1_0_1.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_javax_json_1_0_4.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_containers_jersey_container_servlet_core_2_26.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_core_jersey_client_2_26.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_core_jersey_common_2_26.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_core_jersey_server_2_26.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_ext_jersey_entity_filtering_2_26.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_media_jersey_media_jaxb_2_26.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_media_jersey_media_json_jackson_2_26.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_glassfish_jersey_media_jersey_media_multipart_2_26.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jvnet_mimepull_mimepull_1_9_7.xml" afterPath="" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/1_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/1_main.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/1_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/1_test.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/ejb/MockingBean.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/dao/TweetDAO.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/dao/TweetDAO.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/dao/TweetDAOImpl.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/dao/TweetDAOImpl.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/dao/UserDAO.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/dao/UserDAO.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/dao/UserDAOImpl.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/dao/UserDAOImpl.class" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/ejb/TweetBean.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/ejb/TweetBean.class" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/ejb/UserBean.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/ejb/UserBean.class" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/entity/Like.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/entity/Like.class" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/entity/Tweet.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/entity/Tweet.class" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/entity/User.class" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/danielrichtersz/entity/User.class" />
       <change beforePath="$PROJECT_DIR$/build/libs/1-1.0-SNAPSHOT.war" afterPath="$PROJECT_DIR$/build/libs/1-1.0-SNAPSHOT.war" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.github.danielrichtersz.entity.DatabaseTest.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.github.danielrichtersz.entity.DatabaseTest.html" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.github.danielrichtersz.entity.EmailTest.html" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.github.danielrichtersz.entity.EmailTest.html" />
@@ -34,18 +62,15 @@
       <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.github.danielrichtersz.entity.TweetTest.xml" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.github.danielrichtersz.entity.TweetTest.xml" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.github.danielrichtersz.entity.UserTest.xml" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.github.danielrichtersz.entity.UserTest.xml" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/META-INF/persistence.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/DatabaseTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/EmailTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/PhonenumberTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/TweetTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/UserTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/test/classes/entity/EmployeeTest.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/MockingBean.java" afterPath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/services/MockDatabaseService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAOImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAOImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/TweetBean.java" afterPath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/TweetBean.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/UserBean.java" afterPath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/UserBean.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Like.java" afterPath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Like.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Tweet.java" afterPath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Tweet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/User.java" afterPath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/User.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/services/MockDatabaseService.java" afterPath="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/services/MockDatabaseService.java" />
     </list>
     <ignored path="$PROJECT_DIR$/.gradle/" />
     <ignored path="$PROJECT_DIR$/build/" />
@@ -79,58 +104,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="UserBean.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserBean.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/UserBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-291">
-              <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+            <state relative-caret-position="441">
+              <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2348#2349#0" expanded="true" />
+                <element signature="e#2390#2391#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractJavaResourceMethodDispatcher.java" pinned="false" current-in-tab="false">
-        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.26/6e535868b17f48060154bc6f68c9d033497c84ea/jersey-server-2.26-sources.jar!/org/glassfish/jersey/server/model/internal/AbstractJavaResourceMethodDispatcher.java">
+      <file leaf-file-name="UserBeanRemote.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/UserBeanRemote.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1785">
-              <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
+            <state relative-caret-position="420">
+              <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TweetBean.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TweetBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/TweetBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="119" column="77" lean-forward="true" selection-start-line="119" selection-start-column="77" selection-end-line="119" selection-end-column="77" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tweet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Tweet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1134">
-              <caret line="81" column="27" lean-forward="false" selection-start-line="81" selection-start-column="27" selection-end-line="81" selection-end-column="27" />
-              <folding>
-                <element signature="e#1901#1902#0" expanded="true" />
-                <element signature="e#1937#1938#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Like.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Like.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
-              <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -139,18 +141,18 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+            <state relative-caret-position="294">
+              <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MockDatabaseService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/services/MockDatabaseService.java">
+      <file leaf-file-name="TweetBeanRemote.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/TweetBeanRemote.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            <state relative-caret-position="399">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -158,11 +160,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MockDatabase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/mock/MockDatabase.java">
+      <file leaf-file-name="TweetDAOLocal.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAOLocal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="77" column="52" lean-forward="true" selection-start-line="77" selection-start-column="52" selection-end-line="77" selection-end-column="52" />
+            <state relative-caret-position="84">
+              <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+              <folding>
+                <element signature="e#2261#2262#0" expanded="true" />
+                <element signature="e#2312#2313#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="6" column="57" lean-forward="false" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/BaseDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -171,23 +196,24 @@
       <file leaf-file-name="UserDAOImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="126">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/User.java">
+      <file leaf-file-name="UserDAOLocal.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAOLocal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="37" column="29" lean-forward="false" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+            <state relative-caret-position="21">
+              <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#686#687#0" expanded="true" />
+                <element signature="e#786#787#0" expanded="true" />
+                <element signature="e#855#856#0" expanded="true" />
+                <element signature="e#2027#2028#0" expanded="true" />
+                <element signature="e#2102#2103#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -200,6 +226,7 @@
       <list>
         <option value="JUnit4 Test Class" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -395,8 +422,8 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="4565232796933" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="903028667" />
+        <entry key="$PROJECT_DIR$" value="4565613867241" />
+        <entry key="$PROJECT_DIR$/build.gradle" value="3884616663" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="566444372" />
         <entry key="$PROJECT_DIR$/settings.gradle" value="838754274" />
       </map>
@@ -574,12 +601,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/test/java/TweetTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/LocalUserDao.java" />
-        <option value="$PROJECT_DIR$/src/test/java/UserTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/PhonenumberTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/Country.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/TweetType.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/LocalTweetDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" />
@@ -604,13 +625,8 @@
         <option value="$PROJECT_DIR$/src/main/java/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/ejb/TweetBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/App.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/BaseDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Email.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/TweetType.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/test/java/entity/UserTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/entity/DatabaseTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/entity/EmailTest.java" />
@@ -619,12 +635,23 @@
         <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/MockingBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/mock/MockDatabase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Like.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/User.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDaoLocal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/BaseDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Like.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Tweet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/services/MockDatabaseService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAOLocal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAOLocal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/TweetBeanRemote.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/TweetBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/UserBean.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/UserBeanRemote.java" />
       </list>
     </option>
   </component>
@@ -664,7 +691,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -773,6 +799,14 @@
             </path>
             <path>
               <item name="1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kwetter" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="1" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
             <path>
@@ -785,29 +819,15 @@
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Gradle: javax:javaee-api:8.0" type="70bed36:NamedLibraryElementNode" />
               <item name="javaee-api-8.0.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: javax:javaee-api:8.0" type="70bed36:NamedLibraryElementNode" />
-              <item name="javaee-api-8.0.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="javax" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: javax:javaee-api:8.0" type="70bed36:NamedLibraryElementNode" />
-              <item name="javaee-api-8.0.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="javax" type="462c0819:PsiDirectoryNode" />
-              <item name="rs" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -823,16 +843,19 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java/com/github/danielrichtersz/entity" />
   </component>
   <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.github.danielrichtersz.ejb" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="entity" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.github.danielrichtersz.services" />
       <recent name="" />
       <recent name="entity" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="" />
@@ -1149,48 +1172,49 @@
       <workItem from="1525647020909" duration="17239000" />
       <workItem from="1525768359814" duration="3110000" />
       <workItem from="1525781452930" duration="120000" />
-      <workItem from="1525955108523" duration="2666000" />
+      <workItem from="1525955108523" duration="10292000" />
+      <workItem from="1526123152801" duration="10313000" />
+      <workItem from="1526142267554" duration="6683000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Kwetter_[build_test] - 2018.05.07 at 05h 46m 15s.xml">
+    <history-entry file="Kwetter_[build_test] - 2018.05.12 at 18h 39m 42s.xml">
       <configuration name="Kwetter [build test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="Kwetter_[build_test] - 2018.05.07 at 05h 47m 46s.xml">
+    <history-entry file="Kwetter_[build_test] - 2018.05.12 at 18h 43m 18s.xml">
       <configuration name="Kwetter [build test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="Kwetter_[build_test] - 2018.05.07 at 11h 31m 31s.xml">
+    <history-entry file="Kwetter_[build_test] - 2018.05.12 at 18h 44m 08s.xml">
       <configuration name="Kwetter [build test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="Kwetter_[build_test] - 2018.05.07 at 11h 31m 32s.xml">
+    <history-entry file="Kwetter_[build_test] - 2018.05.12 at 19h 57m 31s.xml">
       <configuration name="Kwetter [build test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="Kwetter_[build_test] - 2018.05.07 at 11h 45m 44s.xml">
+    <history-entry file="Kwetter_[build_test] - 2018.05.12 at 19h 57m 54s.xml">
       <configuration name="Kwetter [build test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="Kwetter_[build_test] - 2018.05.08 at 10h 36m 08s.xml">
+    <history-entry file="Kwetter_[build_test] - 2018.05.12 at 20h 17m 06s.xml">
       <configuration name="Kwetter [build test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="Kwetter_[build_test] - 2018.05.08 at 14h 12m 33s.xml">
+    <history-entry file="Kwetter_[build_test] - 2018.05.12 at 20h 30m 57s.xml">
       <configuration name="Kwetter [build test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="Kwetter_[build_test] - 2018.05.08 at 14h 12m 52s.xml">
+    <history-entry file="Kwetter_[build_test] - 2018.05.12 at 20h 33m 37s.xml">
       <configuration name="Kwetter [build test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="Kwetter_[build_test] - 2018.05.10 at 15h 14m 35s.xml">
+    <history-entry file="Kwetter_[build_test] - 2018.05.12 at 20h 35m 27s.xml">
       <configuration name="Kwetter [build test]" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="Kwetter_[build_test] - 2018.05.10 at 15h 14m 51s.xml">
+    <history-entry file="Kwetter_[build_test] - 2018.05.12 at 20h 50m 14s.xml">
       <configuration name="Kwetter [build test]" configurationId="GradleRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="129444000" />
+    <option name="totallyTimeSpent" value="154066000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1860" height="1098" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1199,6 +1223,7 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1210,13 +1235,14 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3700108" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3700108" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29091927" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2998879" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1224,11 +1250,47 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24973147" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28478965" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3700108" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901832" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2954036" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1245,13 +1307,25 @@
           <properties />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Tweet.java</url>
-          <line>76</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/UserBean.java</url>
+          <line>57</line>
           <properties />
-          <option name="timeStamp" value="25" />
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/UserBean.java</url>
+          <line>71</line>
+          <properties />
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/services/MockDatabaseService.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="32" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="26" />
+      <option name="time" value="37" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1270,18 +1344,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/LocalUserDaoImpl.java" />
-    <entry file="jar://D:/Program Files/Java/jdk1.8.0_162/jre/lib/rt.jar!/sun/reflect/DelegatingMethodAccessorImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/BaseDAO.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/TweetDAOImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/TweetDAO.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/entity/EmployeeTest.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/Employee.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/TweetType.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/Email.java" />
@@ -1306,27 +1368,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/BaseDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="34" lean-forward="false" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1362,13 +1403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1414,17 +1448,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Email.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.26/6e535868b17f48060154bc6f68c9d033497c84ea/jersey-server-2.26-sources.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="75" column="87" lean-forward="false" selection-start-line="75" selection-start-column="87" selection-end-line="75" selection-end-column="87" />
         </state>
       </provider>
     </entry>
@@ -1435,112 +1476,196 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Email.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="22" column="20" lean-forward="false" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.26/6e535868b17f48060154bc6f68c9d033497c84ea/jersey-server-2.26-sources.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="75" column="87" lean-forward="false" selection-start-line="75" selection-start-column="87" selection-end-line="75" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.26/6e535868b17f48060154bc6f68c9d033497c84ea/jersey-server-2.26-sources.jar!/org/glassfish/jersey/server/model/internal/AbstractJavaResourceMethodDispatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1785">
-          <caret line="147" column="0" lean-forward="false" selection-start-line="147" selection-start-column="0" selection-end-line="147" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
+        <state relative-caret-position="484">
           <caret line="37" column="29" lean-forward="false" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#686#687#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#686#687#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Tweet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="81" column="27" lean-forward="false" selection-start-line="81" selection-start-column="27" selection-end-line="81" selection-end-column="27" />
+        <state relative-caret-position="168">
+          <caret line="8" column="56" lean-forward="false" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
           <folding>
-            <element signature="e#1901#1902#0" expanded="true" />
-            <element signature="e#1937#1938#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Like.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="546">
+          <caret line="30" column="44" lean-forward="false" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/entity/Tweet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="1071">
+          <caret line="79" column="29" lean-forward="false" selection-start-line="79" selection-start-column="29" selection-end-line="79" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.glassfish.jersey.core/jersey-server/2.26/6e535868b17f48060154bc6f68c9d033497c84ea/jersey-server-2.26-sources.jar!/org/glassfish/jersey/server/model/internal/AbstractJavaResourceMethodDispatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2373">
+          <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax/javaee-api/8.0/d20c2404766162f9f7797943131a918e0ee45414/javaee-api-8.0-sources.jar!/javax/ejb/Stateless.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="61" column="18" lean-forward="false" selection-start-line="61" selection-start-column="18" selection-end-line="61" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax/javaee-api/8.0/d20c2404766162f9f7797943131a918e0ee45414/javaee-api-8.0-sources.jar!/javax/ejb/Singleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49">
+          <caret line="55" column="18" lean-forward="false" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/mock/MockDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/services/MockDatabaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="9" column="48" lean-forward="false" selection-start-line="9" selection-start-column="48" selection-end-line="9" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#350#351#0" expanded="false" />
+            <element signature="e#375#376#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAOLocal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#786#787#0" expanded="true" />
+            <element signature="e#855#856#0" expanded="true" />
+            <element signature="e#2027#2028#0" expanded="true" />
+            <element signature="e#2102#2103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/TweetDAOLocal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="12" column="32" lean-forward="false" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+          <folding>
+            <element signature="e#2261#2262#0" expanded="true" />
+            <element signature="e#2312#2313#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/BaseDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" column="57" lean-forward="false" selection-start-line="6" selection-start-column="57" selection-end-line="6" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/dao/UserDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="126">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/UserBean.java">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-291">
-          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/services/MockDatabaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="18" column="18" lean-forward="false" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/mock/MockDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="77" column="52" lean-forward="true" selection-start-line="77" selection-start-column="52" selection-end-line="77" selection-end-column="52" />
+        <state relative-caret-position="294">
+          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/TweetBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="119" column="77" lean-forward="true" selection-start-line="119" selection-start-column="77" selection-end-line="119" selection-end-column="77" />
+        <state relative-caret-position="273">
+          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/TweetBeanRemote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/UserBeanRemote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com.github.danielrichtersz/ejb/UserBean.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2348#2349#0" expanded="true" />
+            <element signature="e#2390#2391#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,11 +1,14 @@
 package com.github.danielrichtersz.entity;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
 public class Like implements Serializable {
 
-    private Long id;
+    private long id;
 
     private long userId;
 
@@ -17,10 +20,15 @@ public class Like implements Serializable {
 
     }
 
-    public Like(long user, long tweet, Date dateLiked) {
+    public Like(long user, long tweet) {
         this.userId = user;
         this.tweetId = tweet;
-        this.dateLiked = dateLiked;
+
+        //Set dateLiked
+        TimeZone timeZone = TimeZone.getTimeZone("Europe/Amsterdam");
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTimeZone(timeZone);
+        this.dateLiked = calendar.getTime();
     }
 
     public long getUserId() {

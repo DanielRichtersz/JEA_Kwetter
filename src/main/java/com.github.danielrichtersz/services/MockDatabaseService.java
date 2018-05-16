@@ -2,22 +2,16 @@ package com.github.danielrichtersz.services;
 
 import com.github.danielrichtersz.mock.MockDatabase;
 
-import javax.annotation.PostConstruct;
-import javax.ejb.Singleton;
-import javax.ejb.Startup;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 
-@Singleton
-@Startup
+@ApplicationScoped
 public class MockDatabaseService {
 
+    @Inject
     private MockDatabase db;
 
     public MockDatabase getDb() {
         return db;
-    }
-
-    @PostConstruct
-    public void init() {
-        db = MockDatabase.getInstance();
     }
 }

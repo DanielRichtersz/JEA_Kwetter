@@ -5,29 +5,22 @@ import com.github.danielrichtersz.entity.Tweet;
 import com.github.danielrichtersz.entity.TweetType;
 import com.github.danielrichtersz.entity.User;
 
+import javax.annotation.PostConstruct;
+import javax.inject.Singleton;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Singleton
 public class MockDatabase {
 
     private static MockDatabase db;
-
-    public static MockDatabase getInstance() {
-        if (db == null) {
-            db = new MockDatabase();
-        }
-        return db;
-    }
 
     List<Tweet> tweetList = new ArrayList<>();
     List<User> userList = new ArrayList<>();
     List<Email> emailList = new ArrayList<>();
 
-    private MockDatabase(){
-        this.initialize();
-    }
-
+    @PostConstruct
     private void initialize() {
         User follower;
         User following;
@@ -39,12 +32,19 @@ public class MockDatabase {
         email = new Email();
         email.setEmail("test@mail.com");
         email.setConfirmed(false);
+        email.setId(this.emailList.size() + 1);
+        this.emailList.add(email);
+
         Email email1 = new Email();
         email1.setEmail("test1@email.com");
         email1.setConfirmed(true);
+        email1.setId(this.emailList.size() + 1);
+        this.emailList.add(email1);
         Email email2 = new Email();
         email2.setEmail("test2@email.com");
         email2.setConfirmed(false);
+        email2.setId(this.emailList.size() + 1);
+        this.emailList.add(email2);
 
         List<String> interests = new ArrayList<>();
         interests.add("Food");
@@ -110,8 +110,6 @@ public class MockDatabase {
 
         tweet2.setId((long)tweetList.size() + 1);
         tweetList.add(tweet2);
-
-        emailList.add(email);
     }
 
     public List<Tweet> getTweetList() {

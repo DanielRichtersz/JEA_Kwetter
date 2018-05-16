@@ -1,19 +1,22 @@
 package com.github.danielrichtersz.dao;
 
 import com.github.danielrichtersz.entity.User;
+import com.github.danielrichtersz.mock.MockDatabase;
 import com.github.danielrichtersz.services.MockDatabaseService;
 
-import javax.ejb.DependsOn;
-import javax.ejb.EJB;
-import javax.ejb.Singleton;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.ws.rs.NotFoundException;
 
-@Singleton(name = "UserDAOLocal")
-@DependsOn("MockDatabaseService")
+@ApplicationScoped
 public class UserDAOLocal implements UserDAO {
 
-    @EJB
+    @Inject
     MockDatabaseService mockDatabaseService;
+
+    public MockDatabase getDatabaseTest() {
+        return mockDatabaseService.getDb();
+    }
 
     @Override
     public User getByID(Long id) {
@@ -60,6 +63,7 @@ public class UserDAOLocal implements UserDAO {
         throw new NotFoundException("The specified credentials do not match any registered user");
     }
 
+    @Override
     public long getNewUserID() {
         return mockDatabaseService.getDb().getUserList().size() + 1;
     }

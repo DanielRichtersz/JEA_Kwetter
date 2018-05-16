@@ -8,7 +8,7 @@ import java.util.TimeZone;
 
 public class Like implements Serializable {
 
-    private Long id;
+    private long id;
 
     private long userId;
 

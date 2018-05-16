@@ -6,7 +6,7 @@ import java.util.List;
 
 public class User implements Serializable {
 
-    private Long id;
+    private long id;
 
     private Email email;
 
@@ -108,11 +108,11 @@ public class User implements Serializable {
         this.phonenumber = phonenumber;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

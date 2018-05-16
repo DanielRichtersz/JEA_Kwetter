@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.github.danielrichtersz.entity.TweetTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-05-12T18:50:14" hostname="LAPTOP-SVUM57RM" time="0.005">
+<testsuite name="com.github.danielrichtersz.entity.TweetTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2018-05-15T14:08:58" hostname="LAPTOP-SVUM57RM" time="0.002">
   <properties/>
   <testcase name="SetDate" classname="com.github.danielrichtersz.entity.TweetTest" time="0.0"/>
   <testcase name="SetType" classname="com.github.danielrichtersz.entity.TweetTest" time="0.0"/>
   <testcase name="GetMessage" classname="com.github.danielrichtersz.entity.TweetTest" time="0.0"/>
   <testcase name="SetOwner" classname="com.github.danielrichtersz.entity.TweetTest" time="0.0"/>
   <testcase name="GetDate" classname="com.github.danielrichtersz.entity.TweetTest" time="0.0"/>
-  <testcase name="GetType" classname="com.github.danielrichtersz.entity.TweetTest" time="0.0"/>
+  <testcase name="GetType" classname="com.github.danielrichtersz.entity.TweetTest" time="0.001"/>
   <testcase name="SetMessage" classname="com.github.danielrichtersz.entity.TweetTest" time="0.0"/>
   <testcase name="GetOwner" classname="com.github.danielrichtersz.entity.TweetTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

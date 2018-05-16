@@ -3,34 +3,33 @@ package com.github.danielrichtersz.ejb;
 import com.github.danielrichtersz.dao.UserDAOLocal;
 import com.github.danielrichtersz.entity.Email;
 import com.github.danielrichtersz.entity.User;
-import com.github.danielrichtersz.mock.MockDatabase;
-import com.github.danielrichtersz.services.MockDatabaseService;
 
 import javax.ejb.CreateException;
-import javax.ejb.EJB;
-import javax.ejb.Stateful;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.xml.bind.ValidationException;
+import java.io.Serializable;
 
 @Path("/users")
-@Stateful(name = "UserBean")
-public class UserBean implements UserBeanRemote {
+@ApplicationScoped
+public class UserBean implements UserBeanRemote, Serializable {
 
-    @EJB
-    UserDAOLocal udl;
+    // Doesn't call the interface. The reason for this is that calling the interface gives an exception which we cannot resolve.
+    // Temporary solution
+    @Inject
+    UserDAOLocal ud;
 
-    @EJB
-    MockDatabaseService mockDatabaseService;
+    //@Inject
+    //MockDatabaseService mockDatabaseService;
 
-    @Override
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/test")
     public Response testGetCheck() {
-        MockDatabase mdb = mockDatabaseService.getDb();
-        return Response.ok(mdb).build();
+        return Response.ok(ud.getDatabaseTest()).build();
     }
 
     @Override
@@ -38,7 +37,7 @@ public class UserBean implements UserBeanRemote {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/login")
     public User logInCheck(@FormParam("email") String email, @FormParam("password") String password) throws ValidationException {
-        User user = udl.getByCredentials(email, password);
+        User user = ud.getByCredentials(email, password);
         if (user != null) {
             return user;
         }
@@ -57,7 +56,7 @@ public class UserBean implements UserBeanRemote {
                            @FormParam("profilepictureurl") String profilePicture) throws CreateException {
         User user = createOrUpdateUser(firstName, lastName, email, password, phonenumber, profilePicture, null);
         if (user != null) {
-            udl.create(user);
+            ud.create(user);
             return user;
         } else {
             throw new CreateException("User could not be created");
@@ -69,7 +68,7 @@ public class UserBean implements UserBeanRemote {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{userid}/get")
     public User getUser(@PathParam("userid") long userId) {
-        return udl.getByID(userId);
+        return ud.getByID(userId);
     }
 
     @Override
@@ -83,9 +82,9 @@ public class UserBean implements UserBeanRemote {
                          @FormParam("password") String password,
                          @FormParam("phonenumber") String phonenumber,
                          @FormParam("profilepictureurl") String profilePicture) throws CreateException {
-        User foundUser = udl.getByID(userId);
+        User foundUser = ud.getByID(userId);
         foundUser = createOrUpdateUser(firstName, lastName, email, password, phonenumber, profilePicture, foundUser);
-        udl.edit(foundUser);
+        ud.edit(foundUser);
         return foundUser;
     }
 
@@ -111,7 +110,7 @@ public class UserBean implements UserBeanRemote {
                 user = editUser;
             } else {
                 user = new User();
-                user.setId(udl.getNewUserID());
+                user.setId(ud.getNewUserID());
             }
 
             user.setFirstName(firstName);

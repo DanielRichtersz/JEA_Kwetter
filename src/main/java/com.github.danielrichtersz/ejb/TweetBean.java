@@ -3,26 +3,32 @@ package com.github.danielrichtersz.ejb;
 
 import com.github.danielrichtersz.dao.TweetDAOLocal;
 import com.github.danielrichtersz.dao.UserDAOLocal;
+import com.github.danielrichtersz.entity.Like;
 import com.github.danielrichtersz.entity.Tweet;
 import com.github.danielrichtersz.entity.User;
 
-import javax.ejb.EJB;
-import javax.ejb.Stateful;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.management.InstanceAlreadyExistsException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Path("/tweets")
-@Stateful(name = "TweetBean")
-public class TweetBean implements TweetBeanRemote {
+@ApplicationScoped
+public class TweetBean implements TweetBeanRemote, Serializable {
 
-    @EJB
+    // Doesn't call the interface. The reason for this is that calling the interface gives an exception which we cannot resolve.
+    // Temporary solution
+    @Inject
     UserDAOLocal udl;
 
-    @EJB
+    // Doesn't call the interface. The reason for this is that calling the interface gives an exception which we cannot resolve.
+    // Temporary solution
+    @Inject
     TweetDAOLocal tdl;
 
     @POST
@@ -81,8 +87,8 @@ public class TweetBean implements TweetBeanRemote {
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/like/{tweetid}/{userid}")
-    public void addLikeToTweet(@PathParam("tweetid") long tweetId, @PathParam("userid") long userId) throws InstanceAlreadyExistsException {
-        tdl.addLikeToTweet(tweetId, userId);
+    public Like addLikeToTweet(@PathParam("tweetid") long tweetId, @PathParam("userid") long userId) throws InstanceAlreadyExistsException {
+        return tdl.addLikeToTweet(tweetId, userId);
     }
 
     //Todo: Find method to have userid protected so a user can only delete its own tweets

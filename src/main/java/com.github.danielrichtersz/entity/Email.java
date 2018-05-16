@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Email implements Serializable {
 
-    private Long id;
+    private long id;
 
     private String email;
 
@@ -35,7 +35,11 @@ public class Email implements Serializable {
         isConfirmed = confirmed;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }

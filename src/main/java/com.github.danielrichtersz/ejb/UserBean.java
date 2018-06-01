@@ -20,7 +20,7 @@ public class UserBean implements UserBeanRemote, Serializable {
     // Doesn't call the interface. The reason for this is that calling the interface gives an exception which we cannot resolve.
     // Temporary solution
     @Inject
-    UserDAOLocal ud;
+    UserDAOLocal userDAOLocal;
 
     //@Inject
     //MockDatabaseService mockDatabaseService;
@@ -29,7 +29,7 @@ public class UserBean implements UserBeanRemote, Serializable {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/test")
     public Response testGetCheck() {
-        return Response.ok(ud.getDatabaseTest()).build();
+        return Response.ok(userDAOLocal.getDatabaseTest()).build();
     }
 
     @Override
@@ -37,7 +37,7 @@ public class UserBean implements UserBeanRemote, Serializable {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/login")
     public User logInCheck(@FormParam("email") String email, @FormParam("password") String password) throws ValidationException {
-        User user = ud.getByCredentials(email, password);
+        User user = userDAOLocal.getByCredentials(email, password);
         if (user != null) {
             return user;
         }
@@ -54,9 +54,10 @@ public class UserBean implements UserBeanRemote, Serializable {
                            @FormParam("password") String password,
                            @FormParam("phonenumber") String phonenumber,
                            @FormParam("profilepictureurl") String profilePicture) throws CreateException {
-        User user = createOrUpdateUser(firstName, lastName, email, password, phonenumber, profilePicture, null);
+        User user = createOrUpdateUser(firstName, lastName, email, password, phonenumber, profilePicture);
+        user.setId(userDAOLocal.getNewUserID());
         if (user != null) {
-            ud.create(user);
+            userDAOLocal.create(user);
             return user;
         } else {
             throw new CreateException("User could not be created");
@@ -68,7 +69,7 @@ public class UserBean implements UserBeanRemote, Serializable {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{userid}/get")
     public User getUser(@PathParam("userid") long userId) {
-        return ud.getByID(userId);
+        return userDAOLocal.getByID(userId);
     }
 
     @Override
@@ -82,10 +83,18 @@ public class UserBean implements UserBeanRemote, Serializable {
                          @FormParam("password") String password,
                          @FormParam("phonenumber") String phonenumber,
                          @FormParam("profilepictureurl") String profilePicture) throws CreateException {
-        User foundUser = ud.getByID(userId);
-        foundUser = createOrUpdateUser(firstName, lastName, email, password, phonenumber, profilePicture, foundUser);
-        ud.edit(foundUser);
-        return foundUser;
+        // Get original user
+        User foundUser = userDAOLocal.getByID(userId);
+
+        // Edit user
+        User editedUser = createOrUpdateUser(firstName, lastName, email, password, phonenumber, profilePicture);
+
+        // Replace ID
+        editedUser.setId(foundUser.getId());
+
+        // foundUser gets removed and editedUser created within the DAO method
+        userDAOLocal.edit(editedUser);
+        return editedUser;
     }
 
     //Creates or, if a user is given with editUser, updates a user with the given information.
@@ -95,22 +104,14 @@ public class UserBean implements UserBeanRemote, Serializable {
                                     @FormParam("email") String email,
                                     @FormParam("password") String password,
                                     @FormParam("phonenumber") String phonenumber,
-                                    @FormParam("profilepictureurl") String profilePicture,
-                                    User editUser) {
+                                    @FormParam("profilepictureurl") String profilePicture) {
         try {
-            User user;
+            User user = new User();
             if ((firstName == null || firstName.isEmpty()) ||
                     (lastName == null || lastName.isEmpty()) ||
                     (email == null || email.isEmpty()) ||
                     (password == null || password.isEmpty())) {
                 throw new NullPointerException("Could not create the user due to missing input");
-            }
-            //Check if used is to be edited
-            if (editUser != null) {
-                user = editUser;
-            } else {
-                user = new User();
-                user.setId(ud.getNewUserID());
             }
 
             user.setFirstName(firstName);

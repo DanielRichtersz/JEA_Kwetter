@@ -34,7 +34,8 @@ public class TweetDAOLocal implements TweetDAO {
     public void edit(Tweet entity) {
         for (Tweet tweet : mockDatabaseService.getDb().getTweetList()) {
             if (tweet.getId() == entity.getId()) {
-                tweet = entity;
+                remove(tweet);
+                create(entity);
                 return;
             }
         }

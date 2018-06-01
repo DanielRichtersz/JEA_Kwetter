@@ -37,7 +37,9 @@ public class UserDAOLocal implements UserDAO {
     public void edit(User entity) {
         for (User user : mockDatabaseService.getDb().getUserList()) {
             if (user.getId() == entity.getId()) {
-                user = entity;
+                this.remove(user);
+                this.create(entity);
+                return;
             }
         }
         throw new NotFoundException("The specified user could not be found");

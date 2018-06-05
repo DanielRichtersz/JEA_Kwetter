@@ -149,4 +149,42 @@ public class UserBean implements UserBeanRemote, Serializable {
             return null;
         }
     }
+
+    @Override
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{followerID}/{followingID}")
+    public Response stopFollowing(@PathParam("followerID") long followerID, @PathParam("followerID") long followingID) {
+        User follower = userDAOLocal.getByID(followerID);
+        User following = userDAOLocal.getByID(followingID);
+
+        follower.removeFollowing(following);
+        following.removeFollower(follower);
+
+        userDAOLocal.edit(follower);
+        userDAOLocal.edit(following);
+
+        return Response.ok().build();
+    }
+
+    @Override
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{followerID}/{followingID}")
+    public Response follow(@PathParam("followerID") long followerID, @PathParam("followerID") long followingID) {
+        User follower = userDAOLocal.getByID(followerID);
+        User following = userDAOLocal.getByID(followingID);
+
+        follower.addFollowing(following);
+        following.addFollower(follower);
+
+        userDAOLocal.edit(follower);
+        userDAOLocal.edit(following);
+
+        return Response.ok().build();
+    }
+
+
+
+
 }

@@ -129,5 +129,13 @@ public class User implements Serializable {
     public void addFollowing(User following) {
         this.following.add(following);
     }
+
+    public void removeFollowing(User following) {
+        this.following.remove(following);
+    }
+
+    public void removeFollower(User follower) {
+        this.followers.remove(follower);
+    }
     //endregion
 }

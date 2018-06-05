@@ -28,4 +28,14 @@ public interface UserBeanRemote {
                   @FormParam("profilepictureurl") String profilePicture) throws CreateException;
 
     Response removeUser(@FormParam("userid") long userID);
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{followerID}/{followingID}")
+    Response stopFollowing(@PathParam("followerID") long followerID, @PathParam("followerID") long followingID);
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{followerID}/{followingID}")
+    Response follow(@PathParam("followerID") long followerID, @PathParam("followerID") long followingID) throws CreateException;
 }

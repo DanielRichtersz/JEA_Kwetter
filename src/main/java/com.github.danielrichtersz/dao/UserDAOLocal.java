@@ -95,4 +95,6 @@ public class UserDAOLocal implements UserDAO {
     private long getNewUserID() {
         return mockDatabaseService.getDb().getUserList().size() + 1;
     }
+
+
 }

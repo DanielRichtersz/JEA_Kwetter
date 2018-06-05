@@ -1,5 +1,6 @@
 package com.github.danielrichtersz.dao;
 
+import com.github.danielrichtersz.entity.Email;
 import com.github.danielrichtersz.entity.User;
 import com.github.danielrichtersz.mock.MockDatabase;
 import com.github.danielrichtersz.services.MockDatabaseService;
@@ -30,6 +31,11 @@ public class UserDAOLocal implements UserDAO {
 
     @Override
     public void create(User entity) {
+        entity.setId(this.getNewUserID());
+
+        // Setup validation
+        entity.getEmail().setValidationCode(generateValidationCode());
+
         mockDatabaseService.getDb().getUserList().add(entity);
     }
 
@@ -66,7 +72,27 @@ public class UserDAOLocal implements UserDAO {
     }
 
     @Override
-    public long getNewUserID() {
+    public User validateEmail(String validationCode) {
+        // Find the user with the corresponding validationcode to be validated
+        for (User user : mockDatabaseService.getDb().getUserList()) {
+            if (user.getEmail().isConfirmed() == false && user.getEmail().getValidationCode() == validationCode) {
+                // Update confirmation status
+                user.getEmail().setConfirmed(true);
+
+                // Persist the change
+                edit(user);
+                return user;
+            }
+        }
+        throw new NotFoundException("The specified validation code was not found");
+    }
+
+    public String generateValidationCode() {
+        // TODO: Generate actual random validationcode
+        return "randomemailverificationcode";
+    }
+
+    private long getNewUserID() {
         return mockDatabaseService.getDb().getUserList().size() + 1;
     }
 }

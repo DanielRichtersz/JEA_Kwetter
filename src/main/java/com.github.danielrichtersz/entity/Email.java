@@ -10,6 +10,8 @@ public class Email implements Serializable {
 
     private boolean isConfirmed;
 
+    private String validationCode;
+
     public Email() {
 
     }
@@ -41,5 +43,13 @@ public class Email implements Serializable {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getValidationCode() {
+        return validationCode;
+    }
+
+    public void setValidationCode(String validationCode) {
+        this.validationCode = validationCode;
     }
 }

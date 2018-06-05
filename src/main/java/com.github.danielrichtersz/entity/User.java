@@ -28,8 +28,6 @@ public class User implements Serializable {
 
     private List<Like> likes;
 
-    private List<Tweet> tweets;
-
     public User() {
 
     }

@@ -1,7 +1,9 @@
 package com.github.danielrichtersz.ejb;
 
+import com.github.danielrichtersz.dao.TweetDAOLocal;
 import com.github.danielrichtersz.dao.UserDAOLocal;
 import com.github.danielrichtersz.entity.Email;
+import com.github.danielrichtersz.entity.Tweet;
 import com.github.danielrichtersz.entity.User;
 
 import javax.ejb.CreateException;
@@ -12,6 +14,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.xml.bind.ValidationException;
 import java.io.Serializable;
+import java.util.List;
 
 @Path("/users")
 @ApplicationScoped
@@ -21,6 +24,9 @@ public class UserBean implements UserBeanRemote, Serializable {
     // Temporary solution
     @Inject
     UserDAOLocal userDAOLocal;
+
+    @Inject
+    TweetDAOLocal tweetDAOLocal;
 
     //@Inject
     //MockDatabaseService mockDatabaseService;
@@ -33,15 +39,11 @@ public class UserBean implements UserBeanRemote, Serializable {
     }
 
     @Override
-    @POST
+    @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/login")
-    public User logInCheck(@FormParam("email") String email, @FormParam("password") String password) throws ValidationException {
-        User user = userDAOLocal.getByCredentials(email, password);
-        if (user != null) {
-            return user;
-        }
-        throw new ValidationException("The login credentials could not be validated");
+    @Path("/{userid}/get")
+    public User getUser(@PathParam("userid") long userId) {
+        return userDAOLocal.getByID(userId);
     }
 
     @Override
@@ -55,21 +57,12 @@ public class UserBean implements UserBeanRemote, Serializable {
                            @FormParam("phonenumber") String phonenumber,
                            @FormParam("profilepictureurl") String profilePicture) throws CreateException {
         User user = createOrUpdateUser(firstName, lastName, email, password, phonenumber, profilePicture);
-        user.setId(userDAOLocal.getNewUserID());
         if (user != null) {
             userDAOLocal.create(user);
             return user;
         } else {
             throw new CreateException("User could not be created");
         }
-    }
-
-    @Override
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{userid}/get")
-    public User getUser(@PathParam("userid") long userId) {
-        return userDAOLocal.getByID(userId);
     }
 
     @Override
@@ -95,6 +88,30 @@ public class UserBean implements UserBeanRemote, Serializable {
         // foundUser gets removed and editedUser created within the DAO method
         userDAOLocal.edit(editedUser);
         return editedUser;
+    }
+
+    @Override
+    @DELETE
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{userid}")
+    public Response removeUser(@FormParam("userid") long userID) {
+        User user = userDAOLocal.getByID(userID);
+
+        // Delete user's tweets
+        List<Tweet> toBeDeletedTweets = tweetDAOLocal.getTweetsByUserID(userID);
+        for (Tweet tweet : toBeDeletedTweets) {
+
+            // TODO: Check if no error with iterator occurs (Due to reference list?)
+            tweetDAOLocal.remove(tweet);
+        }
+
+        // Delete user's likes
+        tweetDAOLocal.removeLikesByUserID(userID);
+
+        // Delete user
+        userDAOLocal.remove(user);
+
+        return Response.ok().build();
     }
 
     //Creates or, if a user is given with editUser, updates a user with the given information.

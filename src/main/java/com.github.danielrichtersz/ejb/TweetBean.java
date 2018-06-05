@@ -16,6 +16,7 @@ import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @Path("/tweets")
 @ApplicationScoped
@@ -67,9 +68,38 @@ public class TweetBean implements TweetBeanRemote, Serializable {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{tweetid}/get")
-    public Tweet getTweet(@PathParam("tweetid") long tweetId) {
+    @Path("/{tweetid}")
+    public Tweet getTweetByTweetID(@PathParam("tweetid") long tweetId) {
         return tdl.getByID(tweetId);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/{userid}")
+    public List<Tweet> getTweetsByUserID(@PathParam("userid") long userId) {
+        return tdl.getTweetsByUserID(userId);
+    }
+
+    @POST
+    @Path("/{userid}")
+    @Override
+    public List<Tweet> getTweetsByUserIDBetweenDates(
+            @FormParam("startdate") String startdate,
+            @FormParam("enddate") String enddate,
+            @PathParam("userid") long userId) {
+        // Parse the time
+        SimpleDateFormat parse = new SimpleDateFormat("yyyy-MM-dd");
+        Date start;
+        Date end;
+
+        try {
+            start = parse.parse(startdate);
+            end = parse.parse(enddate);
+        } catch (ParseException e) {
+            throw new BadRequestException();
+        }
+
+        return tdl.getTweetsByUserIDBetweenDates(start, end, userId);
     }
 
     //Should be in UserBean?

@@ -3,12 +3,12 @@ package com.github.danielrichtersz.ejb;
 import com.github.danielrichtersz.entity.User;
 
 import javax.ejb.CreateException;
-import javax.ws.rs.FormParam;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import javax.xml.bind.ValidationException;
 
 public interface UserBeanRemote {
-
-    User logInCheck(@FormParam("email") String email, @FormParam("password") String password) throws ValidationException;
 
     User createUser(@FormParam("firstname") String firstName,
                     @FormParam("lastname") String lastName,
@@ -26,4 +26,6 @@ public interface UserBeanRemote {
                   @FormParam("password") String password,
                   @FormParam("phonenumber") String phonenumber,
                   @FormParam("profilepictureurl") String profilePicture) throws CreateException;
+
+    Response removeUser(@FormParam("userid") long userID);
 }

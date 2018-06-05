@@ -8,6 +8,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.management.InstanceAlreadyExistsException;
 import javax.ws.rs.NotFoundException;
+import java.util.*;
 
 @ApplicationScoped
 public class TweetDAOLocal implements TweetDAO {
@@ -56,6 +57,52 @@ public class TweetDAOLocal implements TweetDAO {
     }
 
     @Override
+    public List<Tweet> getTweetsByUserID(long userId) {
+        // Find all Tweets belonging to this userId
+        List<Tweet> foundTweets = new ArrayList<Tweet>();
+        for (Tweet tweet : mockDatabaseService.getDb().getTweetList()) {
+            if (tweet.getOwner().getId() == userId) {
+                foundTweets.add(tweet);
+            }
+        }
+
+        // Sort tweets
+        // TODO: Check if the sorting works correctly
+        foundTweets.sort(Tweet.tweetComparator);
+
+        //Sort the list by dates
+        //Collections.sort(foundTweets, new Comparator<Tweet>() {
+        //    public int compare(Tweet o1, Tweet o2) {
+        //        return o1.getDateCreated().compareTo(o2.getDateCreated());
+        //    }
+        //});
+
+        return foundTweets;
+    }
+
+    @Override
+    public List<Tweet> getTweetsByUserIDBetweenDates(
+            Date start,
+            Date end,
+            long userId) {
+        // Find all Tweets belonging to this userId
+        List<Tweet> foundTweets = new ArrayList<Tweet>();
+        for (Tweet tweet : mockDatabaseService.getDb().getTweetList()) {
+            if (tweet.getOwner().getId() == userId) {
+                if (tweet.getDateCreated().before(end) && tweet.getDateCreated().after(start))
+                {
+                    foundTweets.add(tweet);
+                }
+            }
+        }
+
+        // Sort the tweets
+        foundTweets.sort(Tweet.tweetComparator);
+
+        return foundTweets;
+    }
+
+    @Override
     public Like addLikeToTweet(long tweetId, long userId) throws InstanceAlreadyExistsException {
         Tweet tweet = this.getByID(tweetId);
         for (Like like : tweet.getLikes()) {
@@ -69,5 +116,20 @@ public class TweetDAOLocal implements TweetDAO {
     @Override
     public void removeLikeFromTweet(long tweetId, long userId) {
         getByID(tweetId).removeLike(userId);
+    }
+
+    @Override
+    public void removeLikesByUserID(long userID) {
+
+        for (Tweet tweet : mockDatabaseService.getDb().getTweetList()) {
+            Iterator<Like> i = tweet.getLikes().iterator();
+            while (i.hasNext()) {
+                Like deleteLike = i.next();
+                if (deleteLike.getUserId() == userID)
+                {
+                    tweet.removeLike(userID);
+                }
+            }
+        }
     }
 }

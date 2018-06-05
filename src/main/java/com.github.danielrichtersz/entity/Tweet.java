@@ -85,8 +85,22 @@ public class Tweet implements Serializable {
         for (Like like : this.likes) {
             if (like.getUserId() == userId) {
                 this.likes.remove(like);
+                return;
             }
         }
         throw new NotFoundException("This tweet has not been liked by the specified user");
     }
+
+    public static Comparator<Tweet> tweetComparator
+            = new Comparator<Tweet>() {
+        public int compare(Tweet i, Tweet o) {
+            if (o.getDateCreated().after(i.getDateCreated())) {
+                return 1;
+            } else if (o.getDateCreated().before(i.getDateCreated())) {
+                return -1;
+            }
+            return 0;
+        }
+    };
+
 }

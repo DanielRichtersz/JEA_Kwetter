@@ -1,26 +1,22 @@
-package com.github.danielrichtersz.ejb;
-
+package com.github.danielrichtersz.services.impl;
 
 import com.github.danielrichtersz.dao.TweetDAOLocal;
 import com.github.danielrichtersz.dao.UserDAOLocal;
 import com.github.danielrichtersz.entity.Like;
 import com.github.danielrichtersz.entity.Tweet;
 import com.github.danielrichtersz.entity.User;
+import com.github.danielrichtersz.services.interfaces.TweetService;
 
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.management.InstanceAlreadyExistsException;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import java.io.Serializable;
+import javax.ws.rs.BadRequestException;
+import javax.ws.rs.NotAllowedException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-@Path("/tweets")
-@ApplicationScoped
-public class TweetBean implements TweetBeanRemote, Serializable {
+public class TweetServiceImpl implements TweetService {
 
     // Doesn't call the interface. The reason for this is that calling the interface gives an exception which we cannot resolve.
     // Temporary solution
@@ -32,12 +28,8 @@ public class TweetBean implements TweetBeanRemote, Serializable {
     @Inject
     TweetDAOLocal tdl;
 
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/create/{userid}")
-    public Tweet createTweet(@PathParam("userid") long userId,
-                             @FormParam("datecreated") String dateCreated,
-                             @FormParam("message") String message) throws ParseException {
+    @Override
+    public Tweet createTweet(long userId, String dateCreated, String message) throws ParseException {
         Tweet tweet = new Tweet();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd kk-mm-ss");
         Date date;
@@ -66,28 +58,19 @@ public class TweetBean implements TweetBeanRemote, Serializable {
         return tweet;
     }
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{tweetid}")
-    public Tweet getTweetByTweetID(@PathParam("tweetid") long tweetId) {
+    @Override
+    public Tweet getTweetByTweetID(long tweetId) {
         return tdl.getByID(tweetId);
     }
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{userid}")
-    public List<Tweet> getTweetsByUserID(@PathParam("userid") long userId) {
+    @Override
+    public List<Tweet> getTweetsByUserID(long userId) {
         return tdl.getTweetsByUserID(userId);
     }
 
-    @POST
-    @Path("/{userid}")
     @Override
-    public List<Tweet> getTweetsByUserIDBetweenDates(
-            @FormParam("startdate") String startdate,
-            @FormParam("enddate") String enddate,
-            @PathParam("userid") long userId) {
-        // Parse the time
+    public List<Tweet> getTweetsByUserIDBetweenDates(String startdate, String enddate, long userId) {
+// Parse the time
         SimpleDateFormat parse = new SimpleDateFormat("yyyy-MM-dd");
         Date start;
         Date end;
@@ -102,10 +85,8 @@ public class TweetBean implements TweetBeanRemote, Serializable {
         return tdl.getTweetsByUserIDBetweenDates(start, end, userId);
     }
 
-    //Should be in UserBean?
-    @DELETE
-    @Path("/delete/{tweetid}/{userid}")
-    public void removeTweet(@PathParam("tweetid") long tweetId, @PathParam("userid") long userId) {
+    @Override
+    public void removeTweet(long tweetId, long userId) {
         Tweet tweet = tdl.getByID(tweetId);
         if (tweet.getOwner().getId() == userId) {
             tdl.remove(tweet);
@@ -114,18 +95,13 @@ public class TweetBean implements TweetBeanRemote, Serializable {
         }
     }
 
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/like/{tweetid}/{userid}")
-    public Like addLikeToTweet(@PathParam("tweetid") long tweetId, @PathParam("userid") long userId) throws InstanceAlreadyExistsException {
+    @Override
+    public Like addLikeToTweet(long tweetId, long userId) throws InstanceAlreadyExistsException {
         return tdl.addLikeToTweet(tweetId, userId);
     }
 
-    //Todo: Find method to have userid protected so a user can only delete its own tweets
-    @DELETE
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/like/delete/{tweetid}/{userid}")
-    public void removeLikeFromTweet(@PathParam("tweetid") long tweetId, @PathParam("userid") long userId) {
+    @Override
+    public void removeLikeFromTweet(long tweetId, long userId) {
         tdl.removeLikeFromTweet(tweetId, userId);
     }
 }

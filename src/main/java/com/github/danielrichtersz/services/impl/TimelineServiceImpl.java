@@ -1,24 +1,20 @@
-package com.github.danielrichtersz.ejb;
+package com.github.danielrichtersz.services.impl;
 
 import com.github.danielrichtersz.dao.TweetDAOLocal;
 import com.github.danielrichtersz.dao.UserDAOLocal;
 import com.github.danielrichtersz.entity.Tweet;
 import com.github.danielrichtersz.entity.User;
+import com.github.danielrichtersz.services.interfaces.TimelineService;
 
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
+import javax.ws.rs.BadRequestException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-@Path("/timeline")
-@ApplicationScoped
-public class TimelineBean implements TimelineBeanRemote {
+public class TimelineServiceImpl implements TimelineService {
 
     @Inject
     UserDAOLocal userDAOLocal;
@@ -26,12 +22,8 @@ public class TimelineBean implements TimelineBeanRemote {
     @Inject
     TweetDAOLocal tweetDAOLocal;
 
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{userid}")
     @Override
-    public List<Tweet> getTimelineByUserID(@PathParam("userid") long userID, @FormParam("startdate") String startdate,
-                                           @FormParam("enddate") String enddate) {
+    public List<Tweet> getTimelineByUserID(long userID, String startdate, String enddate) {
         // Parse the time
         SimpleDateFormat parse = new SimpleDateFormat("yyyy-MM-dd");
         Date start;

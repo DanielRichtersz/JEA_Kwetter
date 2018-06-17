@@ -1,24 +1,19 @@
-package com.github.danielrichtersz.ejb;
+package com.github.danielrichtersz.services.impl;
 
 import com.github.danielrichtersz.dao.TweetDAOLocal;
 import com.github.danielrichtersz.dao.UserDAOLocal;
 import com.github.danielrichtersz.entity.Email;
 import com.github.danielrichtersz.entity.Tweet;
 import com.github.danielrichtersz.entity.User;
+import com.github.danielrichtersz.services.interfaces.UserService;
 
 import javax.ejb.CreateException;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
-import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.core.Response;
-import javax.xml.bind.ValidationException;
-import java.io.Serializable;
 import java.util.List;
 
-@Path("/users")
-@ApplicationScoped
-public class UserBean implements UserBeanRemote, Serializable {
+public class UserServiceImpl implements UserService {
 
     // Doesn't call the interface. The reason for this is that calling the interface gives an exception which we cannot resolve.
     // Temporary solution
@@ -28,34 +23,13 @@ public class UserBean implements UserBeanRemote, Serializable {
     @Inject
     TweetDAOLocal tweetDAOLocal;
 
-    //@Inject
-    //MockDatabaseService mockDatabaseService;
-
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/test")
-    public Response testGetCheck() {
-        return Response.ok(userDAOLocal.getDatabaseTest()).build();
-    }
-
     @Override
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{userid}/get")
-    public User getUser(@PathParam("userid") long userId) {
+    public User getUser(long userId) {
         return userDAOLocal.getByID(userId);
     }
 
     @Override
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/user/create")
-    public User createUser(@FormParam("firstname") String firstName,
-                           @FormParam("lastname") String lastName,
-                           @FormParam("email") String email,
-                           @FormParam("password") String password,
-                           @FormParam("phonenumber") String phonenumber,
-                           @FormParam("profilepictureurl") String profilePicture) throws CreateException {
+    public User createUser(String firstName, String lastName, String email, String password, String phonenumber, String profilePicture) throws CreateException {
         User user = createOrUpdateUser(firstName, lastName, email, password, phonenumber, profilePicture);
         if (user != null) {
             userDAOLocal.create(user);
@@ -66,16 +40,7 @@ public class UserBean implements UserBeanRemote, Serializable {
     }
 
     @Override
-    @PUT
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{userid}/edit")
-    public User editUser(@PathParam("userid") long userId,
-                         @FormParam("firstname") String firstName,
-                         @FormParam("lastname") String lastName,
-                         @FormParam("email") String email,
-                         @FormParam("password") String password,
-                         @FormParam("phonenumber") String phonenumber,
-                         @FormParam("profilepictureurl") String profilePicture) throws CreateException {
+    public User editUser(long userId, String firstName, String lastName, String email, String password, String phonenumber, String profilePicture) {
         // Get original user
         User foundUser = userDAOLocal.getByID(userId);
 
@@ -91,10 +56,7 @@ public class UserBean implements UserBeanRemote, Serializable {
     }
 
     @Override
-    @DELETE
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{userid}")
-    public Response removeUser(@FormParam("userid") long userID) {
+    public Response removeUser(long userID) {
         User user = userDAOLocal.getByID(userID);
 
         // Delete user's tweets
@@ -112,6 +74,39 @@ public class UserBean implements UserBeanRemote, Serializable {
         userDAOLocal.remove(user);
 
         return Response.ok().build();
+    }
+
+    @Override
+    public Response stopFollowing(long followerID, long followingID) {
+        User follower = userDAOLocal.getByID(followerID);
+        User following = userDAOLocal.getByID(followingID);
+
+        follower.removeFollowing(following);
+        following.removeFollower(follower);
+
+        userDAOLocal.edit(follower);
+        userDAOLocal.edit(following);
+
+        return Response.ok().build();
+    }
+
+    @Override
+    public Response follow(long followerID, long followingID) {
+        User follower = userDAOLocal.getByID(followerID);
+        User following = userDAOLocal.getByID(followingID);
+
+        follower.addFollowing(following);
+        following.addFollower(follower);
+
+        userDAOLocal.edit(follower);
+        userDAOLocal.edit(following);
+
+        return Response.ok().build();
+    }
+
+    @Override
+    public Response getTestCheck() {
+        return Response.ok(userDAOLocal.getDatabaseTest()).build();
     }
 
     //Creates or, if a user is given with editUser, updates a user with the given information.
@@ -149,42 +144,4 @@ public class UserBean implements UserBeanRemote, Serializable {
             return null;
         }
     }
-
-    @Override
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{followerID}/{followingID}")
-    public Response stopFollowing(@PathParam("followerID") long followerID, @PathParam("followerID") long followingID) {
-        User follower = userDAOLocal.getByID(followerID);
-        User following = userDAOLocal.getByID(followingID);
-
-        follower.removeFollowing(following);
-        following.removeFollower(follower);
-
-        userDAOLocal.edit(follower);
-        userDAOLocal.edit(following);
-
-        return Response.ok().build();
-    }
-
-    @Override
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{followerID}/{followingID}")
-    public Response follow(@PathParam("followerID") long followerID, @PathParam("followerID") long followingID) {
-        User follower = userDAOLocal.getByID(followerID);
-        User following = userDAOLocal.getByID(followingID);
-
-        follower.addFollowing(following);
-        following.addFollower(follower);
-
-        userDAOLocal.edit(follower);
-        userDAOLocal.edit(following);
-
-        return Response.ok().build();
-    }
-
-
-
-
 }

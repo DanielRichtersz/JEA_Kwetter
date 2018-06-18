@@ -1,7 +1,6 @@
-package com.github.danielrichtersz.dao;
+package dao;
 
-import com.github.danielrichtersz.entity.Email;
-import com.github.danielrichtersz.entity.User;
+import entity.User;
 
 public interface UserDAO extends BaseDAO<User> {
 

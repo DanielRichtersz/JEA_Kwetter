@@ -1,12 +1,10 @@
-package com.github.danielrichtersz.ejb;
+package ejb;
 
-import com.github.danielrichtersz.entity.Like;
-import com.github.danielrichtersz.entity.Tweet;
+import entity.Like;
+import entity.Tweet;
 
 import javax.management.InstanceAlreadyExistsException;
-import javax.ws.rs.PathParam;
 import java.text.ParseException;
-import java.util.Date;
 import java.util.List;
 
 public interface TweetBeanRemote {

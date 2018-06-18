@@ -1,4 +1,4 @@
-package com.github.danielrichtersz.entity;
+package entity;
 
 import javax.ws.rs.NotFoundException;
 import java.io.Serializable;

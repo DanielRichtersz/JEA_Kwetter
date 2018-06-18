@@ -1,5 +1,10 @@
 package com.github.danielrichtersz.entity;
 
+import entity.Email;
+import entity.Tweet;
+import entity.TweetType;
+import entity.User;
+
 import org.junit.Before;
 import org.junit.Test;
 

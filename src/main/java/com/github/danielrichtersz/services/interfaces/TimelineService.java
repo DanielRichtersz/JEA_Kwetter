@@ -1,6 +1,6 @@
-package com.github.danielrichtersz.services.interfaces;
+package services.interfaces;
 
-import com.github.danielrichtersz.entity.Tweet;
+import entity.Tweet;
 
 import java.util.List;
 

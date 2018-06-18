@@ -1,8 +1,8 @@
-package com.github.danielrichtersz.ejb;
+package ejb;
 
-import com.github.danielrichtersz.entity.Tweet;
-import com.github.danielrichtersz.services.impl.TimelineServiceImpl;
-import com.github.danielrichtersz.services.interfaces.TimelineService;
+import entity.Tweet;
+import services.impl.TimelineServiceImpl;
+import services.interfaces.TimelineService;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -15,7 +15,7 @@ import java.util.List;
 public class TimelineBean implements TimelineBeanRemote {
 
     @Inject
-    TimelineServiceImpl timelineService;
+    TimelineService timelineService;
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)

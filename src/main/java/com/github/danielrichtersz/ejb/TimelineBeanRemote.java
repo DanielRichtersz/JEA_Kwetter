@@ -1,6 +1,6 @@
-package com.github.danielrichtersz.ejb;
+package ejb;
 
-import com.github.danielrichtersz.entity.Tweet;
+import entity.Tweet;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

@@ -1,12 +1,13 @@
-package com.github.danielrichtersz.services.impl;
+package services.impl;
 
-import com.github.danielrichtersz.dao.TweetDAOLocal;
-import com.github.danielrichtersz.dao.UserDAOLocal;
-import com.github.danielrichtersz.entity.Like;
-import com.github.danielrichtersz.entity.Tweet;
-import com.github.danielrichtersz.entity.User;
-import com.github.danielrichtersz.services.interfaces.TweetService;
+import dao.TweetDAOLocal;
+import dao.UserDAOLocal;
+import entity.Like;
+import entity.Tweet;
+import entity.User;
+import services.interfaces.TweetService;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.management.InstanceAlreadyExistsException;
 import javax.ws.rs.BadRequestException;
@@ -16,6 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+@ApplicationScoped
 public class TweetServiceImpl implements TweetService {
 
     // Doesn't call the interface. The reason for this is that calling the interface gives an exception which we cannot resolve.

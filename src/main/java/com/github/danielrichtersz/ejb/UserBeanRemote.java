@@ -1,12 +1,11 @@
-package com.github.danielrichtersz.ejb;
+package ejb;
 
-import com.github.danielrichtersz.entity.User;
+import entity.User;
 
 import javax.ejb.CreateException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.xml.bind.ValidationException;
 
 public interface UserBeanRemote {
 

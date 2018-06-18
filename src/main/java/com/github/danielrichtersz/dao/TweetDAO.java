@@ -1,11 +1,10 @@
-package com.github.danielrichtersz.dao;
+package dao;
 
-import com.github.danielrichtersz.entity.Like;
-import com.github.danielrichtersz.entity.Tweet;
-
-import javax.management.InstanceAlreadyExistsException;
+import entity.Like;
+import entity.Tweet;
 import java.util.Date;
 import java.util.List;
+import javax.management.InstanceAlreadyExistsException;
 
 public interface TweetDAO extends BaseDAO<Tweet> {
     Like addLikeToTweet(long tweetId, long userId) throws InstanceAlreadyExistsException;

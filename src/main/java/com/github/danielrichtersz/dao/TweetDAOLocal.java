@@ -1,8 +1,7 @@
-package com.github.danielrichtersz.dao;
-
-import com.github.danielrichtersz.entity.Like;
-import com.github.danielrichtersz.entity.Tweet;
-import com.github.danielrichtersz.services.MockDatabaseService;
+package dao;
+import entity.Like;
+import entity.Tweet;
+import services.MockDatabaseService;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

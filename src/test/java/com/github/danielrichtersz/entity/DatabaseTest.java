@@ -1,7 +1,9 @@
 package com.github.danielrichtersz.entity;
 
+import entity.Email;
 import org.junit.Test;
 
+import entity.User;
 import java.util.ArrayList;
 import java.util.List;
 

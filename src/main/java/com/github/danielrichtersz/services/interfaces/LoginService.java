@@ -1,6 +1,6 @@
-package com.github.danielrichtersz.services.interfaces;
+package services.interfaces;
 
-import com.github.danielrichtersz.entity.User;
+import entity.User;
 
 import javax.xml.bind.ValidationException;
 

@@ -1,9 +1,9 @@
-package com.github.danielrichtersz.mock;
+package mock;
 
-import com.github.danielrichtersz.entity.Email;
-import com.github.danielrichtersz.entity.Tweet;
-import com.github.danielrichtersz.entity.TweetType;
-import com.github.danielrichtersz.entity.User;
+import entity.Email;
+import entity.Tweet;
+import entity.TweetType;
+import entity.User;
 
 import javax.annotation.PostConstruct;
 import javax.inject.Singleton;

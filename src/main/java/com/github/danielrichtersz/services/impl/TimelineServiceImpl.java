@@ -1,11 +1,13 @@
-package com.github.danielrichtersz.services.impl;
+package services.impl;
 
-import com.github.danielrichtersz.dao.TweetDAOLocal;
-import com.github.danielrichtersz.dao.UserDAOLocal;
-import com.github.danielrichtersz.entity.Tweet;
-import com.github.danielrichtersz.entity.User;
-import com.github.danielrichtersz.services.interfaces.TimelineService;
 
+import dao.TweetDAOLocal;
+import dao.UserDAOLocal;
+import entity.Tweet;
+import entity.User;
+import services.interfaces.TimelineService;
+
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.BadRequestException;
 import java.text.ParseException;
@@ -14,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@ApplicationScoped
 public class TimelineServiceImpl implements TimelineService {
 
     @Inject

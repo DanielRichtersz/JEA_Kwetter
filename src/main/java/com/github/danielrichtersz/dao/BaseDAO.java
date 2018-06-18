@@ -1,4 +1,4 @@
-package com.github.danielrichtersz.dao;
+package dao;
 
 public interface BaseDAO<T> {
 

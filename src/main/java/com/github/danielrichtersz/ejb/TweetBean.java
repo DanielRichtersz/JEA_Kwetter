@@ -1,10 +1,9 @@
-package com.github.danielrichtersz.ejb;
+package ejb;
 
-
-import com.github.danielrichtersz.entity.Like;
-import com.github.danielrichtersz.entity.Tweet;
-import com.github.danielrichtersz.services.impl.TweetServiceImpl;
-import com.github.danielrichtersz.services.interfaces.TweetService;
+import entity.Like;
+import entity.Tweet;
+import services.impl.TweetServiceImpl;
+import services.interfaces.TweetService;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -20,7 +19,7 @@ import java.util.List;
 public class TweetBean implements TweetBeanRemote, Serializable {
 
     @Inject
-    TweetServiceImpl tweetService;
+    TweetService tweetService;
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
@@ -34,14 +33,14 @@ public class TweetBean implements TweetBeanRemote, Serializable {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/gbt/{tweetid}")
+    @Path("/gbtid/{tweetid}")
     public Tweet getTweetByTweetID(@PathParam("tweetid") long tweetId) {
         return tweetService.getTweetByTweetID(tweetId);
     }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/gbu/{userid}")
+    @Path("/gbuid/{userid}")
     public List<Tweet> getTweetsByUserID(@PathParam("userid") long userId) {
         return tweetService.getTweetsByUserID(userId);
     }

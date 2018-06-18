@@ -1,4 +1,4 @@
-package com.github.danielrichtersz.entity;
+package entity;
 
 import java.io.Serializable;
 

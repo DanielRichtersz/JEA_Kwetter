@@ -1,4 +1,4 @@
-package com.github.danielrichtersz.entity;
+package entity;
 
 import javax.xml.bind.annotation.XmlTransient;
 import java.io.Serializable;

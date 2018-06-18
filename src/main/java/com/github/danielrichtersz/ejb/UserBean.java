@@ -1,8 +1,8 @@
-package com.github.danielrichtersz.ejb;
+package ejb;
 
-import com.github.danielrichtersz.entity.User;
-import com.github.danielrichtersz.services.impl.UserServiceImpl;
-import com.github.danielrichtersz.services.interfaces.UserService;
+import services.impl.UserServiceImpl;
+import entity.User;
+import services.interfaces.UserService;
 
 import javax.ejb.CreateException;
 import javax.enterprise.context.ApplicationScoped;
@@ -17,7 +17,7 @@ import java.io.Serializable;
 public class UserBean implements UserBeanRemote, Serializable {
 
     @Inject
-    UserServiceImpl userService;
+    UserService userService;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)

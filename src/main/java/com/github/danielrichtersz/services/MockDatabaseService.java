@@ -1,6 +1,6 @@
-package com.github.danielrichtersz.services;
+package services;
 
-import com.github.danielrichtersz.mock.MockDatabase;
+import mock.MockDatabase;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

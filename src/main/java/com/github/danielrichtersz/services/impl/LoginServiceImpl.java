@@ -1,12 +1,14 @@
-package com.github.danielrichtersz.services.impl;
+package services.impl;
 
-import com.github.danielrichtersz.dao.UserDAOLocal;
-import com.github.danielrichtersz.entity.User;
-import com.github.danielrichtersz.services.interfaces.LoginService;
+import dao.UserDAOLocal;
+import entity.User;
+import services.interfaces.LoginService;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.xml.bind.ValidationException;
 
+@ApplicationScoped
 public class LoginServiceImpl implements LoginService {
 
     // Not the interface >>> causes unfixable error

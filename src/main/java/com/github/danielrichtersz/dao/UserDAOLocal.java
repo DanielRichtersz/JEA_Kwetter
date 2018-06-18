@@ -1,9 +1,8 @@
-package com.github.danielrichtersz.dao;
+package dao;
 
-import com.github.danielrichtersz.entity.Email;
-import com.github.danielrichtersz.entity.User;
-import com.github.danielrichtersz.mock.MockDatabase;
-import com.github.danielrichtersz.services.MockDatabaseService;
+import entity.User;
+import mock.MockDatabase;
+import services.MockDatabaseService;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;

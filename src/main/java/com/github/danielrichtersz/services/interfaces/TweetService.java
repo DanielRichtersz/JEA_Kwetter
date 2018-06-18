@@ -1,7 +1,8 @@
-package com.github.danielrichtersz.services.interfaces;
+package services.interfaces;
 
-import com.github.danielrichtersz.entity.Like;
-import com.github.danielrichtersz.entity.Tweet;
+
+import entity.Like;
+import entity.Tweet;
 
 import javax.management.InstanceAlreadyExistsException;
 import java.text.ParseException;

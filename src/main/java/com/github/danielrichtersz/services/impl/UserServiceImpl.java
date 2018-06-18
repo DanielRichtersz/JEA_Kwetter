@@ -1,18 +1,22 @@
-package com.github.danielrichtersz.services.impl;
+package services.impl;
 
-import com.github.danielrichtersz.dao.TweetDAOLocal;
-import com.github.danielrichtersz.dao.UserDAOLocal;
-import com.github.danielrichtersz.entity.Email;
-import com.github.danielrichtersz.entity.Tweet;
-import com.github.danielrichtersz.entity.User;
-import com.github.danielrichtersz.services.interfaces.UserService;
+import dao.TweetDAOLocal;
+import dao.UserDAOLocal;
 
 import javax.ejb.CreateException;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.core.Response;
+
+import entity.Email;
+import entity.Tweet;
+import entity.User;
+import services.interfaces.UserService;
+
 import java.util.List;
 
+@ApplicationScoped
 public class UserServiceImpl implements UserService {
 
     // Doesn't call the interface. The reason for this is that calling the interface gives an exception which we cannot resolve.

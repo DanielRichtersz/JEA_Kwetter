@@ -1,8 +1,7 @@
-package com.github.danielrichtersz.ejb;
-
-import com.github.danielrichtersz.entity.User;
-import com.github.danielrichtersz.services.impl.LoginServiceImpl;
-import com.github.danielrichtersz.services.interfaces.LoginService;
+package ejb;
+import services.impl.LoginServiceImpl;
+import entity.User;
+import services.interfaces.LoginService;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -12,11 +11,10 @@ import javax.xml.bind.ValidationException;
 
 @Path("/userlr")
 @ApplicationScoped
-
 public class LoginBean implements LoginBeanRemote {
 
     @Inject
-    LoginServiceImpl loginService;
+    LoginService loginService;
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)

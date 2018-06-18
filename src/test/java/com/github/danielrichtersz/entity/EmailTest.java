@@ -1,5 +1,6 @@
 package com.github.danielrichtersz.entity;
 
+import entity.Email;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,6 +1,5 @@
-package com.github.danielrichtersz;
 
-import com.github.danielrichtersz.base.CORSFilter;
+import base.CORSFilter;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

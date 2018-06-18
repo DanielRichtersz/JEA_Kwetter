@@ -1,4 +1,4 @@
-package com.github.danielrichtersz.base;
+package base;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.container.ContainerRequestContext;

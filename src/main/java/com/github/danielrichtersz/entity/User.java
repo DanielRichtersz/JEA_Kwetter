@@ -2,6 +2,7 @@ package entity;
 
 import javax.xml.bind.annotation.XmlTransient;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 public class User implements Serializable {
@@ -29,7 +30,10 @@ public class User implements Serializable {
     private List<Like> likes;
 
     public User() {
-
+        interests = new ArrayList<>();
+        followers = new ArrayList<>();
+        following = new ArrayList<>();
+        likes = new ArrayList<>();
     }
 
     //region Getters & Setters

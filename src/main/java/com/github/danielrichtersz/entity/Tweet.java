@@ -1,6 +1,7 @@
 package entity;
 
 import javax.ws.rs.NotFoundException;
+import javax.xml.bind.annotation.XmlAttribute;
 import java.io.Serializable;
 import java.util.*;
 
@@ -25,6 +26,11 @@ public class Tweet implements Serializable {
     //region Getters & Setters
     public Date getDateCreated() {
         return dateCreated;
+    }
+
+    @XmlAttribute
+    public long getDateCreatedUTC() {
+        return this.getDateCreated().getTime();
     }
 
     public TweetType getType() {

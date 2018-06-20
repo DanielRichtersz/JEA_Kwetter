@@ -27,6 +27,7 @@ public class MockDatabase {
         User user;
         Tweet tweet;
         Tweet tweet2;
+        Tweet tweet3;
         Email email;
 
         email = new Email();
@@ -36,12 +37,12 @@ public class MockDatabase {
         this.emailList.add(email);
 
         Email email1 = new Email();
-        email1.setEmail("test1@email.com");
+        email1.setEmail("test1@mail.com");
         email1.setConfirmed(true);
         email1.setId(this.emailList.size() + 1);
         this.emailList.add(email1);
         Email email2 = new Email();
-        email2.setEmail("test2@email.com");
+        email2.setEmail("test2@mail.com");
         email2.setConfirmed(false);
         email2.setId(this.emailList.size() + 1);
         this.emailList.add(email2);
@@ -92,7 +93,7 @@ public class MockDatabase {
         user.setId((long)userList.size() + 1);
         userList.add(user);
 
-
+        // Tweets
         tweet = new Tweet();
         tweet.setMessage("First tweet");
         tweet.setOwner(user);
@@ -100,16 +101,30 @@ public class MockDatabase {
         tweet.setType(TweetType.InititalTweet);
 
         tweet2 = new Tweet();
-        tweet2.setMessage('"' + tweet.getMessage() + '"' + " - Such nice tweet");
+        tweet2.setMessage('"' + tweet.getMessage() + '"' + " - Such nice tweet.");
         tweet2.setOwner(following);
         tweet2.setDateCreated(new Date());
         tweet2.setType(TweetType.ReTweet);
 
+
+        tweet3 = new Tweet();
+        tweet3.setMessage("I am following " + user.getFirstName() + " " + user.getLastName() + "! ");
+        tweet3.setOwner(follower);
+        tweet3.setDateCreated(new Date());
+        tweet3.setType(TweetType.InititalTweet);
+
         tweet.setId((long)tweetList.size() + 1);
+        tweet.addLike(following.getId());
         tweetList.add(tweet);
 
         tweet2.setId((long)tweetList.size() + 1);
+        tweet2.addLike(follower.getId());
+        tweet2.addLike(user.getId());
         tweetList.add(tweet2);
+
+        tweet3.setId((long)tweetList.size() + 1);
+        tweet2.addLike(following.getId());
+        tweetList.add(tweet3);
     }
 
     public List<Tweet> getTweetList() {

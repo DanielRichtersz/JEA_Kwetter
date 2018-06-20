@@ -35,6 +35,13 @@ public class LoginServiceImpl implements LoginService {
         return userDAOLocal.validateEmail(validationCode);
     }
 
+    /**
+     * Called to validate the passed token in combination with the userID.
+     * This method is used to validate the token when performing actions which requires a user to be logged in.
+     * @param token Token received from front-end
+     * @param userId UserID received from front-end
+     * @return
+     */
     @Override
     public boolean validateToken(String token, String userId) {
         try {

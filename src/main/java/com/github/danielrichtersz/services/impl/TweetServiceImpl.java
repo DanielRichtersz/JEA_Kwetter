@@ -11,9 +11,11 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.management.InstanceAlreadyExistsException;
 import javax.ws.rs.BadRequestException;
+import javax.ws.rs.InternalServerErrorException;
 import javax.ws.rs.NotAllowedException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -31,18 +33,18 @@ public class TweetServiceImpl implements TweetService {
     TweetDAOLocal tdl;
 
     @Override
-    public Tweet createTweet(long userId, String dateCreated, String message) throws ParseException {
+    public Tweet createTweet(long userId, String message) throws ParseException {
         Tweet tweet = new Tweet();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd kk-mm-ss");
         Date date;
         try {
             //Convert the dateCreated from formParam string to Date format
-            date = simpleDateFormat.parse(dateCreated);
-        } catch (ParseException e) {
-            throw e;
+            date = Calendar.getInstance().getTime();
+        } catch (Exception e) {
+            throw new InternalServerErrorException("Current date could not be created");
         }
 
-        //If parsing the date was succesfull create Tweet
+        //If parsing the date was successful: create Tweet
         tweet.setDateCreated(date);
 
         //Add the message to the tweet
@@ -72,7 +74,7 @@ public class TweetServiceImpl implements TweetService {
 
     @Override
     public List<Tweet> getTweetsByUserIDBetweenDates(String startdate, String enddate, long userId) {
-// Parse the time
+        // Parse the time
         SimpleDateFormat parse = new SimpleDateFormat("yyyy-MM-dd");
         Date start;
         Date end;

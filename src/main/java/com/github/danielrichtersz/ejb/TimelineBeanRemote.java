@@ -10,7 +10,9 @@ public interface TimelineBeanRemote {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{userid}")
-    List<Tweet> getTimelineByUserID(@PathParam("userid") long userID, @FormParam("startdate") String startdate,
+    @Path("/load")
+    List<Tweet> getTimelineByUserID(@HeaderParam("token") String token,
+                                    @HeaderParam("userid") String userId,
+                                    @FormParam("startdate") String startdate,
                                     @FormParam("enddate") String enddate);
 }

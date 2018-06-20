@@ -4,21 +4,52 @@ import entity.Like;
 import entity.Tweet;
 
 import javax.management.InstanceAlreadyExistsException;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import java.nio.file.AccessDeniedException;
 import java.text.ParseException;
 import java.util.List;
 
 public interface TweetBeanRemote {
-    Tweet createTweet(long userId, String dateCreated, String message) throws ParseException;
 
-    Tweet getTweetByTweetID(long tweetId);
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/create/{userid}")
+    Tweet createTweet(@HeaderParam("token") String token, @HeaderParam("userid") String userId,
+                      @FormParam("message") String message) throws ParseException, AccessDeniedException;
 
-    List<Tweet> getTweetsByUserID(long userId);
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/gbtid/{tweetid}")
+    Tweet getTweetByTweetID(@PathParam("tweetid") long tweetId);
 
-    List<Tweet> getTweetsByUserIDBetweenDates(String startdate, String enddate, long userId);
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/gbuid/{userid}")
+    List<Tweet> getTweetsByUserID(@PathParam("userid") long userId);
 
-    void removeTweet(long tweetId, long userId);
+    @POST
+    @Path("/btwn/{userid}")
+    @Produces(MediaType.APPLICATION_JSON)
+    List<Tweet> getTweetsByUserIDBetweenDates(
+            @FormParam("startdate") String startdate,
+            @FormParam("enddate") String enddate,
+            @PathParam("userid") long userId);
 
-    Like addLikeToTweet(long tweetId, long userId) throws InstanceAlreadyExistsException;
+    @DELETE
+    @Path("/delete/{tweetid}")
+    void removeTweet(@HeaderParam("token") String token, @HeaderParam("userid") String userId,
+                     @PathParam("tweetid") long tweetId) throws AccessDeniedException;
 
-    void removeLikeFromTweet(long tweetId, long userId);
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/like/{tweetid}")
+    Like addLikeToTweet(@HeaderParam("token") String token, @HeaderParam("userid") String userId,
+                        @PathParam("tweetid") long tweetId) throws InstanceAlreadyExistsException, AccessDeniedException;
+
+    @DELETE
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/like/delete/{tweetid}")
+    void removeLikeFromTweet(@HeaderParam("token") String token, @HeaderParam("userid") String userId,
+                             @PathParam("tweetid") long tweetId) throws AccessDeniedException;
 }

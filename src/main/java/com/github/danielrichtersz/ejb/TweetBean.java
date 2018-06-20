@@ -3,7 +3,9 @@ package ejb;
 import entity.Like;
 import entity.Tweet;
 import services.impl.TweetServiceImpl;
+import services.interfaces.LoginService;
 import services.interfaces.TweetService;
+import util.JWTAuth;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -11,6 +13,7 @@ import javax.management.InstanceAlreadyExistsException;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.io.Serializable;
+import java.nio.file.AccessDeniedException;
 import java.text.ParseException;
 import java.util.List;
 
@@ -21,16 +24,23 @@ public class TweetBean implements TweetBeanRemote, Serializable {
     @Inject
     TweetService tweetService;
 
+    @Inject
+    LoginService loginService;
+
+    @Override
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/create/{userid}")
-    public Tweet createTweet(@PathParam("userid") long userId,
-                             @FormParam("datecreated") String dateCreated,
-                             @FormParam("message") String message) throws ParseException {
-        return tweetService.createTweet(userId, dateCreated, message);
-
+    public Tweet createTweet(@HeaderParam("token") String token, @HeaderParam("userid") String userId,
+                             @FormParam("message") String message) throws ParseException, AccessDeniedException {
+        if (loginService.validateToken(token, userId)) {
+            return tweetService.createTweet(Long.parseLong(userId), message);
+        } else {
+            throw new AccessDeniedException("You do not have the rights to perform this action");
+        }
     }
 
+    @Override
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/gbtid/{tweetid}")
@@ -38,6 +48,7 @@ public class TweetBean implements TweetBeanRemote, Serializable {
         return tweetService.getTweetByTweetID(tweetId);
     }
 
+    @Override
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/gbuid/{userid}")
@@ -45,10 +56,10 @@ public class TweetBean implements TweetBeanRemote, Serializable {
         return tweetService.getTweetsByUserID(userId);
     }
 
+    @Override
     @POST
     @Path("/btwn/{userid}")
     @Produces(MediaType.APPLICATION_JSON)
-    @Override
     public List<Tweet> getTweetsByUserIDBetweenDates(
             @FormParam("startdate") String startdate,
             @FormParam("enddate") String enddate,
@@ -56,25 +67,41 @@ public class TweetBean implements TweetBeanRemote, Serializable {
         return tweetService.getTweetsByUserIDBetweenDates(startdate, enddate, userId);
     }
 
-    //Should be in UserBean?
+    @Override
     @DELETE
-    @Path("/delete/{tweetid}/{userid}")
-    public void removeTweet(@PathParam("tweetid") long tweetId, @PathParam("userid") long userId) {
-        tweetService.removeTweet(tweetId, userId);
+    @Path("/delete/{tweetid}")
+    public void removeTweet(@HeaderParam("token") String token, @HeaderParam("userid") String userId,
+                            @PathParam("tweetid") long tweetId) throws AccessDeniedException {
+        if (loginService.validateToken(token, userId)) {
+            tweetService.removeTweet(tweetId, Long.valueOf(userId));
+        } else {
+            throw new AccessDeniedException("You do not have the rights to delete this tweet");
+        }
     }
 
+    @Override
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/like/{tweetid}/{userid}")
-    public Like addLikeToTweet(@PathParam("tweetid") long tweetId, @PathParam("userid") long userId) throws InstanceAlreadyExistsException {
-        return tweetService.addLikeToTweet(tweetId, userId);
+    @Path("/like/{tweetid}")
+    public Like addLikeToTweet(@HeaderParam("token") String token, @HeaderParam("userid") String userId,
+                               @PathParam("tweetid") long tweetId) throws InstanceAlreadyExistsException, AccessDeniedException {
+        if (loginService.validateToken(token, userId)) {
+            return tweetService.addLikeToTweet(tweetId, Long.valueOf(userId));
+        } else {
+            throw new AccessDeniedException("You need to be logged in to like a tweet");
+        }
     }
 
-    //Todo: Find method to have userid protected so a user can only delete its own tweets
+    @Override
     @DELETE
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/like/delete/{tweetid}/{userid}")
-    public void removeLikeFromTweet(@PathParam("tweetid") long tweetId, @PathParam("userid") long userId) {
-        tweetService.removeLikeFromTweet(tweetId, userId);
+    @Path("/like/delete/{tweetid}")
+    public void removeLikeFromTweet(@HeaderParam("token") String token, @HeaderParam("userid") String userId,
+                                    @PathParam("tweetid") long tweetId) throws AccessDeniedException {
+        if (loginService.validateToken(token, userId)) {
+            tweetService.removeLikeFromTweet(tweetId, Long.valueOf(userId));
+        } else {
+            throw new AccessDeniedException("You need to be logged in to like a tweet");
+        }
     }
 }

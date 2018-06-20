@@ -9,7 +9,7 @@ import java.text.ParseException;
 import java.util.List;
 
 public interface TweetService {
-    Tweet createTweet(long userId, String dateCreated, String message) throws ParseException;
+    Tweet createTweet(long userId, String message) throws ParseException;
 
     Tweet getTweetByTweetID(long tweetId);
 

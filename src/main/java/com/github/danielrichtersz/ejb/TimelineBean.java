@@ -19,10 +19,12 @@ public class TimelineBean implements TimelineBeanRemote {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{userid}")
+    @Path("/load")
     @Override
-    public List<Tweet> getTimelineByUserID(@PathParam("userid") long userID, @FormParam("startdate") String startdate,
+    public List<Tweet> getTimelineByUserID(@HeaderParam("token") String token,
+                                           @HeaderParam("userid") String userId,
+                                           @FormParam("startdate") String startdate,
                                            @FormParam("enddate") String enddate) {
-        return timelineService.getTimelineByUserID(userID, startdate, enddate);
+        return timelineService.getTimelineByUserID(Long.valueOf(userId), startdate, enddate);
     }
 }

@@ -1,5 +1,5 @@
 package ejb;
-import services.impl.LoginServiceImpl;
+import dto.LoginDTO;
 import entity.User;
 import services.interfaces.LoginService;
 
@@ -20,7 +20,7 @@ public class LoginBean implements LoginBeanRemote {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/login")
     @Override
-    public User login(@FormParam("username") String email, @FormParam("password") String password) throws ValidationException {
+    public LoginDTO login(@FormParam("email") String email, @FormParam("password") String password) throws ValidationException {
         return loginService.login(email, password);
     }
 

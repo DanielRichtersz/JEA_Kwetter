@@ -13,6 +13,7 @@ import javax.ws.rs.BadRequestException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -28,15 +29,17 @@ public class TimelineServiceImpl implements TimelineService {
     @Override
     public List<Tweet> getTimelineByUserID(long userID, String startdate, String enddate) {
         // Parse the time
-        SimpleDateFormat parse = new SimpleDateFormat("yyyy-MM-dd");
+        Calendar calendar = Calendar.getInstance();
         Date start;
         Date end;
 
         try {
-            start = parse.parse(startdate);
-            end = parse.parse(enddate);
-        } catch (ParseException e) {
-            throw new BadRequestException();
+            calendar.setTimeInMillis(Long.valueOf(startdate));
+            start = calendar.getTime();
+            calendar.setTimeInMillis(Long.valueOf(enddate));
+            end = calendar.getTime();
+        } catch (Exception e) {
+            throw new BadRequestException("The dates could not be parsed");
         }
 
         User user = userDAOLocal.getByID(userID);

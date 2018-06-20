@@ -13,12 +13,15 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile "javax:javaee-api:8.0"
+
+    // https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt
+    compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.0'
 }
 
 sourceSets {
     main {
         java {
-            srcDirs = ["src/main/java"]
+            srcDirs = ["src/main/java/com/github/danielrichtersz"]
         }
         resources {
             srcDirs = ["src/main/resources"]

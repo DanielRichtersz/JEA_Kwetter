@@ -34,6 +34,8 @@ public class TimelineServiceImpl implements TimelineService {
         Date end;
 
         try {
+
+            // Parse the dates between tweets will be retrieved
             calendar.setTimeInMillis(Long.valueOf(startdate));
             start = calendar.getTime();
             calendar.setTimeInMillis(Long.valueOf(enddate));
@@ -42,15 +44,22 @@ public class TimelineServiceImpl implements TimelineService {
             throw new BadRequestException("The dates could not be parsed");
         }
 
+        // Get the user by this userid
         User user = userDAOLocal.getByID(userID);
 
+        // Get all tweets that belong to the users that this user follows
         List<Tweet> timeline = new ArrayList<Tweet>();
         if (!user.getFollowing().isEmpty()) {
             for (User following : user.getFollowing()) {
-                timeline.addAll(tweetDAOLocal.getTweetsByUserIDBetweenDates(start, end, userID));
+                timeline.addAll(tweetDAOLocal.getTweetsByUserIDBetweenDates(start, end, following.getId()));
             }
         }
+        // Add all own tweets
+        List<Tweet> ownTweets = tweetDAOLocal.getTweetsByUserIDBetweenDates(start, end, user.getId());
+        timeline.addAll(ownTweets);
 
+        // Sort the timeline
+        timeline.sort(Tweet.tweetComparator);
         return timeline;
     }
 }

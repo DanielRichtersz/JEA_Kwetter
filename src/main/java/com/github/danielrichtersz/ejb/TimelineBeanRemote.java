@@ -8,11 +8,8 @@ import java.util.List;
 
 public interface TimelineBeanRemote {
 
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/load")
-    List<Tweet> getTimelineByUserID(@HeaderParam("token") String token,
-                                    @HeaderParam("userid") String userId,
-                                    @FormParam("startdate") String startdate,
-                                    @FormParam("enddate") String enddate);
+    List<Tweet> getTimelineByUserID(String token,
+                                    String userId,
+                                    String startdate,
+                                    String enddate);
 }

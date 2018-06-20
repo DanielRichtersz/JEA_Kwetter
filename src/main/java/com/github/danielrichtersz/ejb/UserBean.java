@@ -42,7 +42,7 @@ public class UserBean implements UserBeanRemote, Serializable {
     @Override
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/user/create")
+    @Path("/create")
     public User createUser(@FormParam("firstname") String firstName,
                            @FormParam("lastname") String lastName,
                            @FormParam("email") String email,

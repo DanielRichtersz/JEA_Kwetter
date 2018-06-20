@@ -30,7 +30,7 @@ public class TweetBean implements TweetBeanRemote, Serializable {
     @Override
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/create/{userid}")
+    @Path("/create")
     public Tweet createTweet(@HeaderParam("token") String token, @HeaderParam("userid") String userId,
                              @FormParam("message") String message) throws ParseException, AccessDeniedException {
         if (loginService.validateToken(token, userId)) {

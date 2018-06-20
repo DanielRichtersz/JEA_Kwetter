@@ -10,48 +10,34 @@ import java.nio.file.AccessDeniedException;
 
 public interface UserBeanRemote {
 
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{userid}/get")
-    User getUser(@PathParam("userid") long userId);
 
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/user/create")
-    User createUser(@FormParam("firstname") String firstName,
-                    @FormParam("lastname") String lastName,
-                    @FormParam("email") String email,
-                    @FormParam("password") String password,
-                    @FormParam("phonenumber") String phonenumber,
-                    @FormParam("profilepictureurl") String profilePicture) throws CreateException;
+    User getUser(long userId);
 
-    @PUT
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{userid}/edit")
-    User editUser(@HeaderParam("token") String token,
-                  @HeaderParam("userid") String userId,
-                  @FormParam("firstname") String firstName,
-                  @FormParam("lastname") String lastName,
-                  @FormParam("email") String email,
-                  @FormParam("password") String password,
-                  @FormParam("phonenumber") String phonenumber,
-                  @FormParam("profilepictureurl") String profilePicture) throws CreateException, AccessDeniedException;
 
-    @DELETE
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/{userid}/remove")
-    Response removeUser(@HeaderParam("token") String token,
-                        @HeaderParam("userid") String userId) throws AccessDeniedException;
+    User createUser(String firstName,
+                    String lastName,
+                    String email,
+                    String password,
+                    String phonenumber,
+                    String profilePicture) throws CreateException;
 
-    @POST
-    @Path("/stopfollow/{followerID}/{followingID}")
-    Response stopFollowing(@HeaderParam("token") String token,
-                           @HeaderParam("userid") String userId,
-                           @PathParam("followerID") long followingID) throws AccessDeniedException;
+    User editUser(String token,
+                  String userId,
+                  String firstName,
+                  String lastName,
+                  String email,
+                  String password,
+                  String phonenumber,
+                  String profilePicture) throws CreateException, AccessDeniedException;
 
-    @POST
-    @Path("/follow//{followerID}/{followingID}")
-    Response follow(@HeaderParam("token") String token,
-                    @HeaderParam("userid") String userId,
-                    @PathParam("followerID") long followingID) throws AccessDeniedException;
+    Response removeUser(String token,
+                        String userId) throws AccessDeniedException;
+
+    Response stopFollowing(String token,
+                           String userId,
+                           long followingID) throws AccessDeniedException;
+
+    Response follow(String token,
+                    String userId,
+                    long followingID) throws AccessDeniedException;
 }

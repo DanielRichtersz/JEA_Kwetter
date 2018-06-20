@@ -11,9 +11,6 @@ import javax.xml.bind.ValidationException;
 public interface LoginBeanRemote {
     LoginDTO login(String username, String password) throws ValidationException;
 
-    @POST
-    @Produces(MediaType.APPLICATION_JSON)
-    @Path("/validate/{validationcode}/{userid}")
-    User validateEmail(@PathParam("validationcode") String validationCode);
+    User validateEmail(String validationCode);
 
 }

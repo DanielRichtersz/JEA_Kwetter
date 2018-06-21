@@ -23,7 +23,6 @@ public class User implements Serializable {
 
     private List<String> interests;
 
-    @XmlTransient
     private List<User> followers;
 
     private List<User> following;

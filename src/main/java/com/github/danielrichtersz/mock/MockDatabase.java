@@ -22,9 +22,9 @@ public class MockDatabase {
 
     @PostConstruct
     private void initialize() {
-        User follower;
-        User following;
-        User user;
+        User jan;
+        User henk;
+        User daniel;
         Tweet tweet;
         Tweet tweet2;
         Tweet tweet3;
@@ -41,6 +41,7 @@ public class MockDatabase {
         email1.setConfirmed(true);
         email1.setId(this.emailList.size() + 1);
         this.emailList.add(email1);
+
         Email email2 = new Email();
         email2.setEmail("test2@mail.com");
         email2.setConfirmed(false);
@@ -51,79 +52,78 @@ public class MockDatabase {
         interests.add("Food");
         interests.add("Something interesting");
 
-        follower = new User();
-        follower.setEmail(email1);
-        follower.setPhonenumber("0612345678");
-        follower.setFirstName("Follow");
-        follower.setLastName("Er");
-        follower.setPassword("Password1");
-        follower.setProfilePictureURL("./url/another/folder/picture2.jpeg");
-        follower.setInterests(interests);
+        jan = new User();
+        jan.setEmail(email1);
+        jan.setPhonenumber("0612345678");
+        jan.setFirstName("Jan");
+        jan.setLastName("Boezel");
+        jan.setPassword("Password1");
+        jan.setProfilePictureURL("./url/another/folder/picture2.jpeg");
+        jan.setInterests(interests);
 
-        following = new User();
-        following.setEmail(email2);
-        following.setPhonenumber("0687654321");
-        following.setFirstName("Follow");
-        following.setLastName("Ing");
-        following.setPassword("Password2");
-        following.setProfilePictureURL("./url/another/folder/picture3.jpeg");
-        following.setInterests(interests);
+        henk = new User();
+        henk.setEmail(email2);
+        henk.setPhonenumber("0687654321");
+        henk.setFirstName("Henk");
+        henk.setLastName("De Wit");
+        henk.setPassword("Password2");
+        henk.setProfilePictureURL("./url/another/folder/picture3.jpeg");
+        henk.setInterests(interests);
 
         List<User> followers = new ArrayList<>();
-        follower.setId((long) userList.size() + 1);
-        followers.add(follower);
-        userList.add(follower);
-
+        jan.setId((long) userList.size() + 1);
+        followers.add(jan);
+        userList.add(jan);
 
         List<User> followings = new ArrayList<>();
-        following.setId((long) userList.size() + 1);
-        followings.add(following);
-        userList.add(following);
+        henk.setId((long) userList.size() + 1);
+        followings.add(henk);
+        userList.add(henk);
 
-        user = new User();
-        user.setEmail(email);
-        user.setPhonenumber("0621374675");
-        user.setFirstName("Dan");
-        user.setLastName("Iel");
-        user.setPassword("Password");
-        user.setProfilePictureURL("./url/another/folder/picture.jpeg");
-        user.setInterests(interests);
-        user.setFollowers(followers);
-        user.setFollowing(followings);
-        user.setId((long)userList.size() + 1);
-        userList.add(user);
+        daniel = new User();
+        daniel.setEmail(email);
+        daniel.setPhonenumber("0621374675");
+        daniel.setFirstName("Daniel");
+        daniel.setLastName("Richtersz");
+        daniel.setPassword("Password");
+        daniel.setProfilePictureURL("./url/another/folder/picture.jpeg");
+        daniel.setInterests(interests);
+        daniel.setFollowers(followers);
+        daniel.setFollowing(followings);
+        daniel.setId((long)userList.size() + 1);
+        userList.add(daniel);
 
         // Tweets
         tweet = new Tweet();
         tweet.setMessage("First tweet");
-        tweet.setOwner(user);
+        tweet.setOwner(daniel);
         tweet.setDateCreated(new Date());
         tweet.setType(TweetType.InititalTweet);
 
         tweet2 = new Tweet();
         tweet2.setMessage('"' + tweet.getMessage() + '"' + " - Such nice tweet.");
-        tweet2.setOwner(following);
+        tweet2.setOwner(henk);
         tweet2.setDateCreated(new Date());
         tweet2.setType(TweetType.ReTweet);
 
 
         tweet3 = new Tweet();
-        tweet3.setMessage("I am following " + user.getFirstName() + " " + user.getLastName() + "! ");
-        tweet3.setOwner(follower);
+        tweet3.setMessage("I am following " + daniel.getFirstName() + " " + daniel.getLastName() + "! ");
+        tweet3.setOwner(jan);
         tweet3.setDateCreated(new Date());
         tweet3.setType(TweetType.InititalTweet);
 
         tweet.setId((long)tweetList.size() + 1);
-        tweet.addLike(following.getId());
+        tweet.addLike(henk.getId());
         tweetList.add(tweet);
 
         tweet2.setId((long)tweetList.size() + 1);
-        tweet2.addLike(follower.getId());
-        tweet2.addLike(user.getId());
+        tweet2.addLike(jan.getId());
+        tweet2.addLike(daniel.getId());
         tweetList.add(tweet2);
 
         tweet3.setId((long)tweetList.size() + 1);
-        tweet2.addLike(following.getId());
+        tweet2.addLike(henk.getId());
         tweetList.add(tweet3);
     }
 
